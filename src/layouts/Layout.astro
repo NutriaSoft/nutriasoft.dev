@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content="NutriaSoft Landing Page" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta name="theme-color" content="#EEF0EF" />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <meta name="og:site_name" property="og:site_name" content={title} />
+    <meta name="og:type" property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="NutriaSoft Landing Page" />
+    <meta property="og:image" content="https://nutriasoft.dev/preview.png" />
+    <meta property="og:url" content="https://nutriasoft.dev/" />
+
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="NutriaSoft Landing Page" />
+    <meta name="twitter:creator" content="@eriandev" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://nutriasoft.dev/preview.png" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
