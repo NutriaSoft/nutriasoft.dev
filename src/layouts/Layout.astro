@@ -1,9 +1,11 @@
 ---
 interface Props {
   title: string
+  description?: string
 }
 
-const { title } = Astro.props
+const ORIGIN_URL = import.meta.env.ORIGIN_URL
+const { title, description = 'NutriaSoft Landing Page' } = Astro.props
 ---
 
 <!doctype html>
@@ -13,29 +15,36 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>{title}</title>
-    <meta name="description" content="NutriaSoft Landing Page" />
+    <meta name="description" content={description} />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-    <link rel="apple-touch-icon" href="favicon.png" />
-    <meta name="theme-color" content="#EEF0EF" />
-
-    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <meta name="theme-color" content="#06C" />
 
     <meta name="og:site_name" property="og:site_name" content={title} />
     <meta name="og:type" property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="NutriaSoft Landing Page" />
-    <meta property="og:image" content="https://nutriasoft.dev/preview.png" />
-    <meta property="og:url" content="https://nutriasoft.dev/" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={ORIGIN_URL} />
+    <meta property="og:image" content={`${ORIGIN_URL}/preview.png`} />
 
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content="NutriaSoft Landing Page" />
-    <meta name="twitter:creator" content="@eriandev" />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://nutriasoft.dev/preview.png" />
+    <meta name="twitter:image" content={`${ORIGIN_URL}/preview.png`} />
+
+    <style>
+      @font-face {
+        font-family: 'Switzer';
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+        src: url('/fonts/switzer-variable.woff2') format('woff2');
+      }
+    </style>
   </head>
 
-  <body>
+  <body class="min-h-screen font-switzer text-black">
     <slot />
   </body>
 </html>
