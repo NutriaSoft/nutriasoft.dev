@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes, HTMLTag } from 'astro/types'
+
+interface Props extends Omit<HTMLAttributes<'h1'>, 'slot'> {
+  as?: Extract<HTMLTag, 'h1' | 'h2' | 'h3'>
+}
+
+const { as: Tag = 'h1', class: extraClass } = Astro.props
+---
+
+<Tag class:list={['text-4xl font-black md:text-[3.25rem]', extraClass]}>
+  <slot />
+</Tag>
