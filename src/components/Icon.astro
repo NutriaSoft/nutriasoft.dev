@@ -9,7 +9,7 @@ interface Props extends HTMLAttributes<'svg'> {
   height?: number
 }
 
-const { name, title, width, height, size = 24 } = Astro.props
+const { name, title, width, height, size = 24, class: extraClass } = Astro.props
 ---
 
-<AstroIcon {name} {title} width={width ?? size} height={height ?? size} />
+<AstroIcon {name} {title} width={width ?? size} height={height ?? size} class={extraClass} />

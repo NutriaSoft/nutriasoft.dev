@@ -1,4 +1,6 @@
 ---
+import Header from '@/components/Header.astro'
+
 interface Props {
   title: string
   description?: string
@@ -45,6 +47,7 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
   </head>
 
   <body class="min-h-screen font-switzer text-black">
+    <Header />
     <slot />
   </body>
 </html>
