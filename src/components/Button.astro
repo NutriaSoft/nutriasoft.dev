@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+import Text from '@/components/Text.astro'
+import Link from '@/components/Link.astro'
+import Icon from '@/components/Icon.astro'
+
+interface Props extends HTMLAttributes<'button'> {
+  text: string
+  withIcon?: boolean
+}
+
+const { text, withIcon = false } = Astro.props
+---
+
+<Link
+  to="/"
+  class:list={[
+    'block w-max min-w-64 rounded-[14px] bg-primary p-[14px] text-center',
+    { 'flex items-center justify-center gap-x-2': withIcon }
+  ]}
+>
+  <Text as="span" class="text-white">{text}</Text>
+  {withIcon ? <Icon name="chevron" class="text-white" /> : null}
+</Link>
