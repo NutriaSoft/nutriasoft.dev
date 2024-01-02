@@ -10,14 +10,15 @@ interface Props extends HTMLAttributes<'button'> {
   withIcon?: boolean
 }
 
-const { text, withIcon = false } = Astro.props
+const { text, withIcon = false, class: extraClass } = Astro.props
 ---
 
 <Link
   to="/"
   class:list={[
     'block w-max min-w-64 rounded-[14px] bg-primary p-[14px] text-center',
-    { 'flex items-center justify-center gap-x-2': withIcon }
+    { 'flex items-center justify-center gap-x-2': withIcon },
+    extraClass
   ]}
 >
   <Text as="span" class="text-white">{text}</Text>
