@@ -14,21 +14,18 @@ const config: Config = {
     fontFamily: {
       switzer: ['Switzer', 'sans-serif']
     },
-
-    colors: {
-      primary: '#06C',
-
-      gray: {
-        100: '#363B42',
-        200: '#2E2E2F'
-      },
-
-      white: '#FFF',
-      black: '#060606',
-      transparent: 'transparent'
-    },
-
-    extend: {}
+    extend: {
+      colors: {
+        primary: '#06C',
+        gray: {
+          100: '#363B42',
+          200: '#2E2E2F'
+        },
+        white: '#FAFAFA',
+        black: '#060606',
+        transparent: 'transparent'
+      }
+    }
   },
 
   plugins: []

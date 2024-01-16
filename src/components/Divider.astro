@@ -1,0 +1,13 @@
+---
+const { class: extraClass } = Astro.props
+---
+
+<div class:list={['relative flex justify-center', extraClass]}>
+  <div class="absolute inset-0 flex items-center" aria-hidden="true">
+    <div class:list={['border-gray-300 w-full border-t']}></div>
+  </div>
+
+  <div class="bg-inherit relative flex justify-center">
+    <slot />
+  </div>
+</div>
