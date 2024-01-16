@@ -1,0 +1,27 @@
+---
+type Props = {
+  img?: string
+  icon: 'icon' | 'full' | 'none'
+}
+
+const { icon, img } = Astro.props
+
+function ImageHandler() {
+  switch (icon) {
+    case 'icon':
+      return 'p-2'
+    case 'full':
+      return 'p-0'
+    case 'none':
+      return ''
+    default:
+      break
+  }
+}
+---
+
+<div
+  class=`${ImageHandler()} inline-flex w-20 aspect-square items-center justify-center rounded-2xl border bg-white overflow-hidden`
+>
+  <img class="h-full w-full object-contain" src={img} />
+</div>
