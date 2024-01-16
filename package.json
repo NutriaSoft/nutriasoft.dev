@@ -7,6 +7,7 @@
     "astro": "astro",
     "dev": "astro dev",
     "preview": "astro preview",
+    "prepare": "husky install .husky",
     "build": "astro check && astro build",
     "lint": "eslint --fix src/**/*.{astro,ts}",
     "format": "prettier --write src/**/*.astro"
@@ -28,10 +29,18 @@
     "eslint": "8.56.0",
     "eslint-config-standard-with-typescript": "43.0.0",
     "eslint-plugin-astro": "0.31.0",
+    "husky": "8.0.3",
+    "lint-staged": "15.2.0",
     "prettier": "3.1.1",
     "prettier-plugin-astro": "0.12.3",
     "prettier-plugin-tailwindcss": "0.5.10",
     "tailwindcss": "3.4.0",
     "typescript": "5.3.3"
+  },
+  "lint-staged": {
+    "*.{astro,ts}": [
+      "pnpm format",
+      "pnpm lint"
+    ]
   }
 }
