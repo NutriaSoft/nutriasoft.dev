@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running NutriaSoft pre-commit script"
+pnpm lint-staged
+echo "Completed NutriaSoft pre-commit script"
