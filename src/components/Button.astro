@@ -7,20 +7,35 @@ import Icon from '@/components/Icon.astro'
 
 interface Props extends HTMLAttributes<'button'> {
   text: string
+  style?: 'outline' | 'full' | 'disabled'
   withIcon?: boolean
 }
 
-const { text, withIcon = false, class: extraClass } = Astro.props
+const { text, withIcon = false, style = 'full', class: extraClass } = Astro.props
+
+
+const stylesHandler = () => {
+  switch (style) {
+    case 'outline':
+     return 'outline outline-1 text-black' 
+    case 'full':
+      return 'bg-primary text-white'
+  
+    default:
+      break;
+  }
+}
 ---
 
 <Link
   to="/"
   class:list={[
-    'block w-max min-w-64 rounded-[14px] bg-primary p-[14px] text-center',
+    'block w-max min-w-64 rounded-[14px] p-[14px] text-center',
     { 'flex items-center justify-center gap-x-2': withIcon },
-    extraClass
+    extraClass,
+    stylesHandler()
   ]}
 >
-  <Text as="span" class="text-white">{text}</Text>
+  <Text as="span">{text}</Text>
   {withIcon ? <Icon name="chevron" class="text-white" /> : null}
 </Link>
