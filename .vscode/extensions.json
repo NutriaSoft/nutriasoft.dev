@@ -4,7 +4,5 @@
     "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "astro-build.houston",
-    "formulahendry.auto-complete-tag"
   ]
 }
