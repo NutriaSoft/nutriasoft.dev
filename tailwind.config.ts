@@ -12,7 +12,8 @@ const config: Config = {
     },
 
     fontFamily: {
-      switzer: ['Switzer', 'sans-serif']
+      switzer: ['Switzer', 'sans-serif'],
+      titan: ['Titan One', 'sans-serif']
     },
 
     colors: {
