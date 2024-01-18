@@ -1,8 +1,25 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import HeroSection from './_sections/Hero.astro'
+import FeaturedCards from '@/components/FeaturedCards.astro'
+import Text from '@/components/Text.astro'
 ---
 
 <Layout title="NutriaSoft">
   <HeroSection />
+
+  <div class="flex items-start gap-5 mt-16 pb-12 px-8 overflow-scroll lg:overflow-hidden lg:px-8 lg:mx-auto lg:justify-center justify-start">
+    <FeaturedCards img='/images/phone12.svg' label='mobile development' title='explore our apps'/>
+    <FeaturedCards img='/images/phone12.svg' label='mobile development' title='explore our apps'/>
+    <FeaturedCards img='/images/phone12.svg' label='mobile development' title='explore our apps'/>
+    <FeaturedCards img='/images/phone12.svg' label='mobile development' title='explore our apps'/>
+
+  </div>
+
+  <div class="h-[90dvh] flex justify-center items-center">
+
+    <Text class="font-semibold text-xl">Efficiency Unleashed, Tools Unmatched
+    </Text>
+    <!-- <Block icon='full'  img='/images/chimpt.jpeg' /> -->
+  </div>
 </Layout>
