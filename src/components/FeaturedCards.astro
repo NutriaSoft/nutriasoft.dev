@@ -1,0 +1,24 @@
+---
+
+import Text from "./Text.astro"
+
+interface Props {
+  title:string,
+  label:string,
+  img:string
+}
+
+const {img, label, title} = Astro.props
+
+---
+
+
+<div class="bg-primary flex lg:aspect-square aspect-[9/16] gap-8 w-[80%] min-w-[250px] lg:min-w-px max-w-[310px] flex-col items-start justify-start rounded-3xl sm:px-9 px-4 py-5 text-white overflow-hidden">
+  
+  <div>
+    <Text>{label}</Text>
+    <Text class="text-4xl/[1.625rem] font-semibold leading-none">{title}</Text>
+  </div>
+
+  <img src={img} alt={title}>
+</div>

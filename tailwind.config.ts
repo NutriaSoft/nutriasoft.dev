@@ -28,7 +28,11 @@ const config: Config = {
       transparent: 'transparent'
     },
 
-    extend: {}
+    extend: {
+
+
+
+    }
   },
 
   plugins: []
