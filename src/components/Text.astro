@@ -3,12 +3,11 @@ import type { HTMLAttributes, HTMLTag } from 'astro/types'
 
 interface Props extends Omit<HTMLAttributes<'p'>, 'slot'> {
   as?: Extract<HTMLTag, 'p' | 'span' | 'strong'>
-  small?: boolean
 }
 
-const { as: Tag = 'p', class: extraClass, small = false } = Astro.props
+const { as: Tag = 'p', class: extraClass } = Astro.props
 ---
 
-<Tag class:list={['font-normal', { 'text-base/5': small, 'text-lg/[1.625rem]': !small }, extraClass]}>
+<Tag class={extraClass}>
   <slot />
 </Tag>
