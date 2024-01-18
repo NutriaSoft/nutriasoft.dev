@@ -14,12 +14,14 @@ import Button from '@/components/Button.astro'
       <Text class="text-gray-100">
         We use design as our vessel to empower brands committed to environmental causes.
       </Text>
-      <Button text="Give us a call" class="lg:hidden" />
-      <Link styled to="/">Get to know us more</Link>
+      <div class="flex flex-col gap-y-6 items-center lg:flex-row lg:gap-y-0 lg:gap-x-7">
+        <Button text="Give us a call" />
+        <Button text="Get to know us" variant="secondary" class="hidden lg:block" />
+        <Link styled to="/" class="lg:hidden">Get to know us more</Link>
+      </div>
     </article>
     <article class="hidden lg:relative lg:block">
       <img alt="iPad Mini" src="/images/ipad-mini-preview.png" class="max-h-[850px] w-full" />
-      <Button text="Give us a call" class="absolute bottom-12 left-0 right-0 mx-auto" />
     </article>
   </div>
 </section>

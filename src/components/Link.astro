@@ -16,16 +16,24 @@ const target = external ? '_blank' : undefined
 ---
 
 {
-  styled ? (
-    <a {rel} {target} {href} class="flex w-max items-center gap-x-1 text-primary hover:underline" {...restProps}>
+  styled
+    ? (
+    <a
+      {rel}
+      {target}
+      {href}
+      class:list={['flex w-max items-center gap-x-1 text-primary hover:underline', extraClass]}
+      {...restProps}
+    >
       <Text as="span">
         <slot />
       </Text>
       <Icon name="chevron" />
     </a>
-  ) : (
+      )
+    : (
     <a {rel} {target} {href} class={extraClass} {...restProps}>
       <slot />
     </a>
-  )
+      )
 }
