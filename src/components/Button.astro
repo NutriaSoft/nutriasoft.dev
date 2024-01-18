@@ -7,35 +7,33 @@ import Icon from '@/components/Icon.astro'
 
 interface Props extends HTMLAttributes<'button'> {
   text: string
-  style?: 'outline' | 'full' | 'disabled'
   withIcon?: boolean
+  variant?: keyof typeof variants
 }
 
-const { text, withIcon = false, style = 'full', class: extraClass } = Astro.props
+const { text, withIcon = false, variant = 'primary', class: extraClass } = Astro.props
 
-
-const stylesHandler = () => {
-  switch (style) {
-    case 'outline':
-     return 'outline outline-1 text-black' 
-    case 'full':
-      return 'bg-primary text-white'
-  
-    default:
-      break;
+const variants = {
+  primary: {
+    btn: 'bg-primary border-primary',
+    text: 'text-white'
+  },
+  secondary: {
+    btn: 'bg-transparent border-black',
+    text: 'text-black'
   }
-}
+} as const
 ---
 
 <Link
   to="/"
   class:list={[
-    'block w-max min-w-64 rounded-[14px] p-[14px] text-center',
+    'block w-max min-w-64 rounded-[14px] border p-[14px] text-center',
+    variants[variant].btn,
     { 'flex items-center justify-center gap-x-2': withIcon },
-    extraClass,
-    stylesHandler()
+    extraClass
   ]}
 >
-  <Text as="span">{text}</Text>
-  {withIcon ? <Icon name="chevron" class="text-white" /> : null}
+  <Text as="span" class={variants[variant].text}>{text}</Text>
+  {withIcon ? <Icon name="chevron" class={variants[variant].text} /> : null}
 </Link>
