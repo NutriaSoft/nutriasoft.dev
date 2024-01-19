@@ -1,0 +1,162 @@
+---
+import Icon from '@/components/Icon.astro'
+import Link from '@/components/Link.astro'
+import Text from '@/components/Text.astro'
+
+const footerIconsLinks = [
+  {
+    url: '#',
+    icon: 'facebook'
+  },
+  {
+    url: '#',
+    icon: 'x'
+  },
+  {
+    url: '#',
+    icon: 'linkedin'
+  },
+  {
+    url: '#',
+    icon: 'github'
+  }
+]
+
+const footerListLinks = [
+  {
+    title: 'products',
+    url: '#',
+    children: [
+      {
+        title: 'overview',
+        url: '#'
+      },
+      {
+        title: 'pricing',
+        url: '#'
+      },
+      {
+        title: 'releases',
+        url: '#'
+      },
+      {
+        title: 'complements',
+        url: '#'
+      },
+      {
+        title: 'solutions',
+        url: '#'
+      }
+    ]
+  },
+  {
+    title: 'Company',
+    url: '#',
+    children: [
+      {
+        title: 'about Us',
+        url: '#'
+      },
+      {
+        title: 'media kit',
+        url: '#'
+      },
+      {
+        title: 'contact',
+        url: '#'
+      },
+      {
+        title: 'careers',
+        url: '#'
+      }
+    ]
+  },
+  {
+    title: 'legal',
+    url: '#',
+    children: [
+      {
+        title: 'terms',
+        url: '#'
+      },
+      {
+        title: 'privacy',
+        url: '#'
+      },
+      {
+        title: 'cookies',
+        url: '#'
+      },
+      {
+        title: 'licenses',
+        url: '#'
+      }
+    ]
+  },
+  {
+    title: 'support',
+    url: '#',
+    children: [
+      {
+        title: 'pricing',
+        url: '#'
+      },
+      {
+        title: 'documentation',
+        url: '#'
+      },
+      {
+        title: 'guides',
+        url: '#'
+      },
+      {
+        title: 'api status',
+        url: '#'
+      }
+    ]
+  }
+]
+---
+
+<footer class="mx-auto max-w-screen-xl p-2 pb-0">
+  <section class="mb-12 grid gap-16 p-4 lg:grid-cols-2 lg:gap-4">
+    <div class="flex flex-col gap-5">
+      <div class="flex items-center gap-2">
+        <Icon class="drop-shadow-sm" width={30} height={30} name="logo" />
+        <span class="text-2xl font-semibold">Nutriasoft</span>
+      </div>
+
+      <Text class="text-gray-100">Making the world a better place throught creating better interfaces</Text>
+      <ul class="flex gap-12">
+        {
+          footerIconsLinks.map((link) => (
+            <li>
+              <a href={link.url}>
+                <Icon class="drop-shadow-sm" width={30} height={30} name={link.icon} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4">
+      {
+        footerListLinks.map((link) => (
+          <ul class="">
+            <li class="pb-4 text-base font-semibold capitalize">{link.title}</li>
+            {link.children.map((childLink) => (
+              <li class="my-3">
+                <Link class="text-base capitalize text-gray-100" to={childLink.url}>
+                  {childLink.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ))
+      }
+    </div>
+  </section>
+  <section class="flex h-20 items-center border-t-2 border-t-gray-100 py-4">
+    <Text class="text-sm text-gray-100">© 2020 Nutriasoft. All rights reserved.</Text>
+  </section>
+</footer>
