@@ -3,10 +3,11 @@ import Title from '@/components/Title.astro'
 import Text from '@/components/Text.astro'
 import Link from '@/components/Link.astro'
 import Button from '@/components/Button.astro'
+import Container from '@/components/Container.astro'
 ---
 
-<section class="mt-16 w-full px-2 lg:px-8">
-  <div class="max-w-screen-xl lg:mx-auto lg:grid lg:grid-cols-2 lg:justify-center lg:gap-x-4">
+<Container class="mt-16 w-full px-2 lg:px-8">
+  <Container center class="lg:grid lg:grid-cols-2 lg:justify-center lg:gap-x-4">
     <article
       class="mx-auto grid max-w-[668px] grid-flow-row auto-rows-min justify-items-center gap-y-8 text-pretty text-center sm:text-balance lg:justify-items-start lg:self-center lg:text-pretty lg:text-left"
     >
@@ -27,5 +28,5 @@ import Button from '@/components/Button.astro'
         <img src="/images/phone-preview.png" class="mx-auto" />
       </picture>
     </article>
-  </div>
-</section>
+  </Container>
+</Container>
