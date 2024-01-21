@@ -1,11 +1,10 @@
 ---
 import Title from '@/components/Title.astro'
 import Text from '@/components/Text.astro'
-import Link from '@/components/Link.astro'
 import Button from '@/components/Button.astro'
 import Container from '@/components/Container.astro'
 
-// I'm ashamed about this, but the "200px" from line 4, is for the phone. The width of the phone is that.
+// I'm ashamed about this, but the "200px" from line 4 is for the width of the phone.
 ---
 
 <Container class="mt-12 w-full px-2 md:px-8">
@@ -20,7 +19,6 @@ import Container from '@/components/Container.astro'
       <div class="flex w-full flex-col items-start gap-y-6 md:flex-row md:gap-x-7 md:gap-y-0">
         <Button text="Give us a call" />
         <Button text="Get to know us" variant="secondary" />
-        <Link styled to="/" class="md:hidden">Get to know us more</Link>
       </div>
     </article>
 
