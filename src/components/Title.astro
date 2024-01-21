@@ -8,6 +8,6 @@ interface Props extends Omit<HTMLAttributes<'h1'>, 'slot'> {
 const { as: Tag = 'h1', class: extraClass } = Astro.props
 ---
 
-<Tag class:list={['text-4xl font-black md:text-[3.25rem]/none', extraClass]}>
+<Tag class:list={['text-4xl font-black', extraClass]}>
   <slot />
 </Tag>
