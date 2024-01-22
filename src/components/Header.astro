@@ -1,16 +1,18 @@
 ---
 import Icon from '@/components/Icon.astro'
 import Container from '@/components/Container.astro'
+
+// DO NOT ASK ABOUT THE 15px
 ---
 
 <header class="py-6">
   <Container center as="nav" class="flex justify-between">
     <div class="gap-x-3 md:flex">
       <Icon name="logo" size={40} />
-      <span class="hidden text-[1.625rem] font-bold lg:block">NutriaSoft</span>
+      <span class="hidden text-2xl font-bold lg:block">NutriaSoft</span>
     </div>
     <Icon name="hamburguer" size={40} class="md:hidden" />
-    <ul class="hidden md:flex md:gap-x-7">
+    <ul class="hidden text-[15px] md:flex md:gap-x-7">
       <li class="self-center">Mobile apps</li>
       <li class="self-center">Web app</li>
       <li class="self-center">Websites</li>

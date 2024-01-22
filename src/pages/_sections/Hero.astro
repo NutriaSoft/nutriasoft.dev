@@ -1,27 +1,28 @@
 ---
 import Title from '@/components/Title.astro'
 import Text from '@/components/Text.astro'
-import Link from '@/components/Link.astro'
 import Button from '@/components/Button.astro'
 import Container from '@/components/Container.astro'
+
+// I'm ashamed about this, but the "200px" from line 4 is for the width of the phone.
 ---
 
-<Container class="mt-16 w-full px-2 lg:px-8">
-  <Container center class="lg:grid lg:grid-cols-2 lg:justify-center lg:gap-x-4">
+<Container class="mt-12 w-full px-2 md:px-8">
+  <Container center class="md:grid md:grid-cols-[1fr,_200px] md:justify-center md:gap-x-[6%] lg:grid-cols-2">
     <article
-      class="mx-auto grid max-w-[668px] grid-flow-row auto-rows-min justify-items-center gap-y-8 text-pretty text-center sm:text-balance lg:justify-items-start lg:self-center lg:text-pretty lg:text-left"
+      class="mx-auto grid max-w-[668px] grid-flow-row auto-rows-min justify-items-center gap-y-8 text-pretty text-center md:justify-items-start md:text-balance md:text-pretty md:text-left"
     >
       <Title>Get to know the best version of your company</Title>
-      <Text class="text-gray-100">
+      <Text class="font-medium text-gray-100">
         We use design as our vessel to empower brands committed to environmental causes.
       </Text>
-      <div class="flex flex-col items-center gap-y-6 lg:flex-row lg:gap-x-7 lg:gap-y-0">
+      <div class="flex w-full flex-col items-start gap-y-6 md:flex-row md:gap-x-7 md:gap-y-0">
         <Button text="Give us a call" />
-        <Button text="Get to know us" variant="secondary" class="hidden lg:block" />
-        <Link styled to="/" class="lg:hidden">Get to know us more</Link>
+        <Button text="Get to know us" variant="secondary" />
       </div>
     </article>
-    <article class="hidden lg:relative lg:block">
+
+    <article class="hidden md:relative md:block">
       <picture>
         <source media="(max-width: 1200px)" srcset="/images/phone-preview.png" />
         <source media="(min-width: 1200px)" srcset="/images/ipad-mini-preview.png" class="w-full" />
