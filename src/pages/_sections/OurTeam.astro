@@ -1,19 +1,27 @@
 ---
+import Container from '@/components/Container.astro'
+import Icon from '@/components/Icon.astro'
 import ProfileCard from '@/components/ProfileCard.astro'
+import Text from '@/components/Text.astro'
 const arrProfiles = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ---
 
-<section class="mx-auto my-8 flex max-w-screen-xl flex-col gap-9">
-  <div class="p-4">
-    <h3 class="text-5xl font-bold">Our Team</h3>
-    <p class="text-sm text-gray-100">
-      We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best
-      results for our clients
-    </p>
-  </div>
-  <div
-    class="over grid auto-cols-max grid-flow-col justify-items-center gap-4 overflow-x-scroll p-4 sm:grid-cols-2 sm:overflow-x-hidden md:grid-flow-row md:grid-cols-3 xl:grid-cols-4 xl:gap-8"
-  >
-    {arrProfiles.map((profile, index) => <ProfileCard />)}
-  </div>
-</section>
+<Container center class="mt-4 flex flex-col gap-4">
+  <h3 class="text-5xl font-bold">Our Team</h3>
+  <p class="text-sm text-gray-100">
+    We’re a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best
+    results for our clients
+  </p>
+</Container>
+
+<Container
+  center
+  class="grid auto-cols-max grid-flow-col justify-items-center gap-4 overflow-x-scroll py-4 md:grid-flow-row md:grid-cols-6 md:overflow-x-hidden xl:grid-cols-8 xl:gap-8"
+>
+  {arrProfiles.map((profile, index) => <ProfileCard />)}
+</Container>
+
+<Container center class="mx-auto my-4 flex max-w-xs justify-center gap-8">
+  <Text class="flex capitalize">see more <Icon name="chevron" /></Text>
+  <Text class="flex capitalize">positions <Icon name="chevron" /></Text>
+</Container>
