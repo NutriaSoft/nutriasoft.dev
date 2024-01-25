@@ -1,5 +1,5 @@
 ---
-import Header from '@/components/Header.astro'
+import Navbar from '@/components/Navbar.astro'
 
 interface Props {
   title: string
@@ -35,26 +35,22 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={`${ORIGIN_URL}/preview.png`} />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-      @font-face {
-        font-family: 'Switzer';
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-        src: url('/fonts/switzer-variable.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Titan One';
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-        src: url('/fonts/titan-one.woff2') format('woff2');
+      body {
+        font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
     </style>
   </head>
 
-  <body class="min-h-screen bg-[#FAFAFA] font-switzer text-black">
-    <Header />
+  <body class="min-h-screen bg-[#FAFAFA]">
+    <Navbar />
     <slot />
   </body>
 </html>

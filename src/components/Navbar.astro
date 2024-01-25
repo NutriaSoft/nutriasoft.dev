@@ -1,0 +1,25 @@
+---
+import Icon from '@/components/Icon.astro'
+import Container from '@/components/Container.astro'
+---
+
+<navbar>
+  <Container class="flex items-center justify-between py-3">
+    <Icon name="logo" size={45} />
+
+    <!-- links -->
+    <div class="flex items-center justify-start gap-6 self-stretch text-sm font-semibold text-black">
+      <div>Product</div>
+      <div>Marketplace</div>
+      <div>Team</div>
+      <div>About us</div>
+    </div>
+
+    <!-- language selector -->
+    <div class="flex items-center justify-start gap-3 font-semibold">
+      <p>EN</p>
+      <p class="text-gray-600">ES</p>
+      <p class="text-gray-600">PT</p>
+    </div>
+  </Container>
+</navbar>

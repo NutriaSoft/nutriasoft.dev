@@ -3,29 +3,45 @@ import Title from '@/components/Title.astro'
 import Text from '@/components/Text.astro'
 import Button from '@/components/Button.astro'
 import Container from '@/components/Container.astro'
+
+// TODO
+// - Add interaction with the links (planning)
+// - Add to make the language selector change (last part of the proyect)
+// - Add links to every text / Tomorrow
 ---
 
-<Container class="mt-12 w-full px-2 md:px-8">
-  <Container center class="md:grid md:grid-cols-[1fr,_200px] md:justify-center md:gap-x-[6%] lg:grid-cols-2">
-    <article
-      class="mx-auto grid max-w-[668px] grid-flow-row auto-rows-min justify-items-center gap-y-8 text-pretty text-center md:justify-items-start md:text-balance md:text-pretty md:text-left"
-    >
-      <Title class="text-4xl lg:text-[3.25rem]/none">Get to know the best version of your company</Title>
-      <Text class="font-medium text-gray-100">
-        We use design as our vessel to empower brands committed to environmental causes.
-      </Text>
-      <div class="flex w-full flex-col items-start gap-y-6 md:flex-row md:gap-x-7 md:gap-y-0">
-        <Button text="Give us a call" />
-        <Button text="Get to know us" variant="secondary" />
-      </div>
-    </article>
+<Container class="grid grid-cols-2 items-center justify-center pt-12">
+  <div class="flex flex-col justify-start gap-8">
+    <Title class="text-6xl font-bold text-slate-950">Get the best version of your company</Title>
+    <Text class="text-lg text-slate-600">
+      Empowering Your Digital Universe. Elevate your projects, streamline development, and excel as a creator with
+      premier web design and services.
+    </Text>
 
-    <article class="hidden md:relative md:block">
-      <picture>
-        <source media="(max-width: 1200px)" srcset="/images/phone-preview.png" />
-        <source media="(min-width: 1200px)" srcset="/images/ipad-mini-preview.png" class="w-full" />
-        <img src="/images/phone-preview.png" class="mx-auto" />
-      </picture>
-    </article>
-  </Container>
+    <div class="flex w-full justify-between">
+      <div>
+        <Text class="text-sm font-semibold text-slate-700">Located</Text>
+        <Text as="strong" class="text-lg font-semibold text-slate-900">Ciudad de Mexico</Text>
+      </div>
+      <div>
+        <Text class="text-sm font-semibold text-slate-700">Team Members</Text>
+        <Text as="strong" class="text-lg font-semibold text-slate-900">12</Text>
+      </div>
+
+      <div>
+        <Text class="text-sm font-semibold text-slate-700">Working with us</Text>
+        <Text as="strong" class="text-lg font-semibold text-slate-900">+500</Text>
+      </div>
+
+      <div>
+        <Text class="text-sm font-semibold text-slate-700">Websites Done</Text>
+        <Text as="strong" class="text-lg font-semibold text-slate-900">40</Text>
+      </div>
+    </div>
+
+    <div class="flex gap-x-8 p-0">
+      <Button text="Give us a call" withIcon={false} variant="primary" />
+      <Button text="Learn more" withIcon={true} variant="secondary" />
+    </div>
+  </div>
 </Container>
