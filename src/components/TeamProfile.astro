@@ -1,0 +1,23 @@
+---
+import Image from '@/components/Image.astro'
+import Title from '@/components/Title.astro'
+import Text from '@/components/Text.astro'
+import type { HTMLAttributes } from 'astro/types'
+import Container from './Container.astro'
+
+interface Props extends HTMLAttributes<'div'> {
+  title: string
+  subtitle: string
+  imageSrc: string
+}
+
+const { title, subtitle, imageSrc, class: extraClass } = Astro.props
+---
+
+<article class:list={['flex items-start gap-3', extraClass]}>
+  <Image circle title="yigsvnsla" size={64} src={imageSrc} />
+  <Container as="section" class="my-auto flex flex-col px-0">
+    <Title>{title}</Title>
+    <Text class="text-xs text-gray-500">{subtitle}</Text>
+  </Container>
+</article>
