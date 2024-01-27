@@ -1,0 +1,80 @@
+---
+import Container from '@/components/Container.astro'
+import Title from '@/components/Title.astro'
+import Text from '@/components/Text.astro'
+import Features from '@/components/Features.astro'
+
+// type items = {
+//   title: string
+//   label: string
+// }[]
+//
+// // const features_find: items = [
+//   {
+//     title: 'something',
+//     label: 'shutup'
+//   }
+// ]
+---
+
+<Container class="mt-52 flex flex-col gap-20">
+  <div class="mx-auto flex w-[559px] flex-col gap-1 text-center">
+    <Title class="text-4xl font-semibold text-[#111827]">A simple model for you to quickly adapt</Title>
+
+    <Text class="text-lg text-slate-600">
+      The worst people in our industry giving the best talks you’ve ever seen. Nothing will be recorded and every
+      attendee has to sign an NDA to watch the talks.
+    </Text>
+  </div>
+
+  <Container center={false} class="flex gap-8">
+    <Features title="Find" label="The first day of the conference is focused on dark patterns for ecommerce.">
+      <div class="flex flex-col gap-2 py-8">
+        <Title>Get your product</Title>
+        <Text>This is where the magic starts</Text>
+      </div>
+
+      <hr class="w-[80%] bg-slate-600" />
+
+      <div class="flex flex-col gap-2 py-8">
+        <Title>Get your product</Title>
+        <Text>This is where the magic starts</Text>
+      </div>
+    </Features>
+
+    <Features title="Adapt" label="Get the most of your ideas getting your what you need to do in your needs">
+      <div class="flex flex-col gap-2 py-8">
+        <Title>Create a custom workspace</Title>
+        <Text>This is where the magic starts</Text>
+      </div>
+
+      <hr class="w-[80%] bg-slate-600" />
+
+      <div class="flex flex-col gap-2 py-8">
+        <Title>Get your routines working</Title>
+        <Text>This is where the magic starts</Text>
+      </div>
+
+      <hr class="w-[80%] bg-slate-600" />
+
+      <div class="flex flex-col gap-2 py-8">
+        <Title>Integrate your favourite apps</Title>
+        <Text>This is where the magic starts</Text>
+      </div>
+    </Features>
+
+    <Features title="Grow" label="The first day of the conference is focused on dark patterns for ecommerce.">
+      <div class="flex flex-col gap-2 py-8">
+        <Title>Expand to new ideas</Title>
+        <Text>This is where the magic starts</Text>
+      </div>
+
+      <hr class="w-[80%] bg-slate-600" />
+
+      <div class="flex flex-col gap-2 py-8">
+        <Title>Integrate with other databases</Title>
+        <Text>This is where the magic starts</Text>
+      </div>
+    </Features>
+  </Container>
+</Container>

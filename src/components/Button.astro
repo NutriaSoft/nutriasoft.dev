@@ -15,7 +15,7 @@ const { text, withIcon = false, variant = 'primary', class: extraClass } = Astro
 
 const variants = {
   primary: {
-    btn: 'bg-primary border-primary',
+    btn: 'bg-sky-600 text-sky-50',
     text: 'text-white'
   },
   secondary: {
@@ -28,9 +28,9 @@ const variants = {
 <Link
   to="/"
   class:list={[
-    'min-w-45 block w-full rounded-[14px] border p-[14px] text-center',
+    'rounded-[14px] border p-3 text-center',
     variants[variant].btn,
-    { 'flex items-center justify-center gap-x-2': withIcon },
+    { 'flex items-center justify-center gap-x-2 ': withIcon },
     extraClass
   ]}
 >
