@@ -5,35 +5,37 @@ import Text from '@/components/Text.astro'
 import Link from '@/components/Link.astro'
 import Icon from '@/components/Icon.astro'
 
-interface Props extends HTMLAttributes<'button'> {
-  text: string
+type types = 'link' | 'button' | 'submit'
+
+interface Props extends Omit<HTMLAttributes<'button'>, 'type'> {
+  type?: types
+  href?: types extends 'link' ? string | null : never
   withIcon?: boolean
   variant?: keyof typeof variants
 }
 
-const { text, withIcon = false, variant = 'primary', class: extraClass } = Astro.props
+const { withIcon = false, variant = 'primary', type, href = null, class: extraClass } = Astro.props
 
 const variants = {
-  primary: {
-    btn: 'bg-sky-600 text-sky-50',
-    text: 'text-white'
-  },
-  secondary: {
-    btn: 'bg-transparent border-black',
-    text: 'text-black'
-  }
+  primary: 'bg-sky-600 text-sky-50 text-white',
+  secondary: 'bg-transparent border-black text-black'
 } as const
 ---
 
-<Link
-  to="/"
-  class:list={[
-    'rounded-[14px] border p-3 text-center',
-    variants[variant].btn,
-    { 'flex items-center justify-center gap-x-2 ': withIcon },
-    extraClass
-  ]}
->
-  <Text as="span" class={variants[variant].text}>{text}</Text>
-  {withIcon ? <Icon name="chevron" class={variants[variant].text} /> : null}
-</Link>
+<button class:list={[variants[variant], 'flex items-center justify-center rounded-lg p-3 font-semibold', extraClass]}>
+  {withIcon && <Icon />}
+
+  {
+    type === 'link'
+      ? (
+      <Link href={href}>
+        <slot />
+      </Link>
+        )
+      : (
+      <Text>
+        <slot />
+      </Text>
+        )
+  }
+</button>

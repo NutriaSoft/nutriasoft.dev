@@ -10,7 +10,7 @@ import Container from '@/components/Container.astro'
 // - Add links to every text / Tomorrow / I didnt do it 👍
 ---
 
-<Container class="mt-12 grid h-[75dvh] grid-cols-2 items-start justify-center">
+<Container as="section" class="grid h-[73dvh] grid-cols-2 items-start justify-center pt-[6%]">
   <div class="flex flex-col justify-start gap-8">
     <Title class="text-6xl font-bold text-slate-950">Get the best version of your company</Title>
     <Text class="text-lg text-slate-600">
@@ -40,8 +40,8 @@ import Container from '@/components/Container.astro'
     </div>
 
     <div class="flex gap-x-8 p-0">
-      <Button text="Give us a call" withIcon={false} variant="primary" />
-      <Button text="Learn more" withIcon={true} variant="secondary" />
+      <Button variant="primary">Let us know</Button>
+      <Button variant="secondary">Learn more →</Button>
     </div>
   </div>
 </Container>

@@ -4,36 +4,21 @@ import type { HTMLAttributes } from 'astro/types'
 import Text from '@/components/Text.astro'
 import Icon from '@/components/Icon.astro'
 
-interface Props extends Omit<HTMLAttributes<'a'>, 'href' | 'rel' | 'target'> {
-  to: string | URL | undefined
+interface Props extends HTMLAttributes<'a'> {
   external?: boolean
-  styled?: boolean
+  icon?: boolean
 }
 
-const { to: href, external = false, styled = false, class: extraClass, ...restProps } = Astro.props
+const { href, external = false, icon = false, class: extraClass } = Astro.props
 const rel = external ? 'noopener noreferrer' : undefined
 const target = external ? '_blank' : undefined
+
+console.log(href)
 ---
 
-{
-  styled
-    ? (
-    <a
-      {rel}
-      {target}
-      {href}
-      class:list={['text-primary flex w-max items-center gap-x-1 hover:underline', extraClass]}
-      {...restProps}
-    >
-      <Text as="span">
-        <slot />
-      </Text>
-      <Icon name="chevron" />
-    </a>
-      )
-    : (
-    <a {rel} {target} {href} class={extraClass} {...restProps}>
-      <slot />
-    </a>
-      )
-}
+<a href={href} rel={rel} target={target} class:list={[extraClass]}>
+  {icon && <Icon />}
+  <Text>
+    <slot />
+  </Text>
+</a>

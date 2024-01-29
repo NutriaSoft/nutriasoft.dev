@@ -4,11 +4,12 @@ import type { HTMLAttributes, HTMLTag } from 'astro/types'
 interface Props extends Omit<HTMLAttributes<'section'>, 'slot'> {
   as?: Extract<HTMLTag, 'section' | 'article' | 'footer' | 'nav' | 'div'>
   center?: boolean
+  id?: string
 }
 
-const { as: Tag = 'section', center = true, class: extraClass } = Astro.props
+const { as: Tag = 'div', center = false, class: extraClass, id = '' } = Astro.props
 ---
 
-<Tag class:list={[{ 'mx-auto w-full max-w-7xl px-8': center }, extraClass]}>
+<Tag class:list={[{ 'mx-auto w-full max-w-7xl px-8': center || Tag === 'section' }, extraClass]} id={id}>
   <slot />
 </Tag>

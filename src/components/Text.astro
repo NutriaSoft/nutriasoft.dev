@@ -6,6 +6,10 @@ interface Props extends Omit<HTMLAttributes<'p'>, 'slot'> {
 }
 
 const { as: Tag = 'p', class: extraClass } = Astro.props
+
+// const styling = {
+//   p: ''
+// }
 ---
 
 <Tag class={extraClass}>
