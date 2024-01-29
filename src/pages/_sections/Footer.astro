@@ -43,12 +43,12 @@ const footerListLinks = [
 ]
 ---
 
-<Container as="footer" class="mt-52 flex h-56 flex-col items-center space-y-11 px-8 py-2.5">
+<Container as="footer" class="flex flex-col items-center space-y-11 pb-3">
   <ul class="flex flex-row items-center gap-16">
     {
       footerListLinks.map((link) => (
         <li>
-          <Link class="text-sm  font-normal capitalize leading-normal text-slate-700" to={link.url}>
+          <Link class="text-sm text-slate-700" href={link.url}>
             {link.title}
           </Link>
         </li>
@@ -60,9 +60,9 @@ const footerListLinks = [
     {
       footerIconsLinks.map((link) => (
         <li>
-          <a href={link.url}>
-            <Icon name={link.icon} size={20} class="text-slate-700 drop-shadow-sm" />
-          </a>
+          <Link href={link.url}>
+            <Icon name={link.icon} size={20} class="text-slate-700" />
+          </Link>
         </li>
       ))
     }

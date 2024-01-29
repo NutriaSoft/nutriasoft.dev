@@ -4,8 +4,12 @@ import Text from '@/components/Text.astro'
 import Title from '@/components/Title.astro'
 ---
 
-<Container as="section" class="grid grid-cols-2 items-start justify-center" id="about">
-  <div>
+<Container
+  as="section"
+  class="flex flex-col items-center justify-center gap-12 lg:grid lg:grid-cols-2 lg:items-start"
+  id="about"
+>
+  <div class="flex max-w-[559px] flex-col gap-3 text-center lg:max-w-full lg:gap-1 lg:text-left">
     <div class="flex flex-col gap-1">
       <Title as="h2" class="text-4xl">We're afiliated with the term innovation</Title>
       <Text class="text-slate-600">Keeping all your apps connected ensures seamless data flow and automation.</Text>

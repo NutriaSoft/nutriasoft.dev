@@ -2,22 +2,18 @@
 import type { HTMLAttributes } from 'astro/types'
 
 import Text from '@/components/Text.astro'
-import Icon from '@/components/Icon.astro'
 
 interface Props extends HTMLAttributes<'a'> {
   external?: boolean
   icon?: boolean
 }
 
-const { href, external = false, icon = false, class: extraClass } = Astro.props
+const { href, external = false, class: extraClass } = Astro.props
 const rel = external ? 'noopener noreferrer' : undefined
 const target = external ? '_blank' : undefined
-
-console.log(href)
 ---
 
 <a href={href} rel={rel} target={target} class:list={[extraClass]}>
-  {icon && <Icon />}
   <Text>
     <slot />
   </Text>
