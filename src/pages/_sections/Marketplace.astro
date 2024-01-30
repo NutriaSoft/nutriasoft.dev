@@ -6,7 +6,7 @@ import MarketProduct from '@/components/MarketProduct.astro'
 <Container as="section" id="marketplace" class="flex flex-col items-stretch px-8 pb-5 pt-2.5 max-md:px-5">
   <div class="self-center whitespace-nowrap text-4xl font-semibold text-gray-900">Checkout our products</div>
 
-  <div class="mt-10 grid grid-cols-3 items-center justify-center gap-8">
+  <div class="mt-10 grid grid-cols-2 items-center justify-center gap-8 xl:grid-cols-3">
     <MarketProduct title="something" description="mewhen" />
     <MarketProduct title="something" description="mewhen" />
     <MarketProduct title="something" description="mewhen" />
@@ -17,8 +17,10 @@ import MarketProduct from '@/components/MarketProduct.astro'
     <MarketProduct title="something" description="mewhen" />
 
     <!-- row -->
-    <MarketProduct title="something" description="mewhen" />
-    <MarketProduct title="something" description="mewhen" />
-    <MarketProduct title="something" description="mewhen" />
+    <div class="hidden flex-col xl:flex">
+      <MarketProduct title="something" description="mewhen" />
+      <MarketProduct title="something" description="mewhen" />
+      <MarketProduct title="something" description="mewhen" />
+    </div>
   </div>
 </Container>
