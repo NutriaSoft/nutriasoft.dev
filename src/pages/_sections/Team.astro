@@ -7,14 +7,16 @@ import Title from '@/components/Title.astro'
 const arrProfiles = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 ---
 
-<Container as="section" id="team" class="my-4 flex flex-col gap-8 px-8 xl:flex-row">
-  <div class="w-full xl:w-1/3">
+<Container as="section" id="team" class="flex flex-col gap-8 px-8 xl:flex-row">
+  <div class="w-full md:mx-auto md:w-2/4 md:text-center xl:w-1/3 xl:text-start">
     <Title class="text-4xl font-semibold leading-normal">Our Team</Title>
     <Text class="text-lg font-normal leading-normal text-slate-600">
       Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper suspendisse.
     </Text>
   </div>
-  <div class="grid w-full grid-flow-row grid-cols-2 gap-x-8 gap-y-11 lg:grid-cols-3 xl:w-3/4">
+  <div
+    class="grid max-h-96 w-full grid-flow-row grid-cols-1 gap-x-8 gap-y-11 overflow-y-scroll md:grid-cols-2 lg:grid-cols-3 xl:w-3/4"
+  >
     {
       arrProfiles.map(() => (
         <TeamProfile
