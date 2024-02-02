@@ -17,12 +17,12 @@ interface Props extends Omit<HTMLAttributes<'button'>, 'type'> {
 const { withIcon = false, variant = 'primary', type, href = null, class: extraClass } = Astro.props
 
 const variants = {
-  primary: 'bg-sky-600 text-sky-50 text-white',
+  primary: 'bg-sky-600 text-sky-50',
   secondary: 'bg-transparent border-black text-black'
 } as const
 ---
 
-<button class:list={[variants[variant], 'flex items-center justify-center rounded-lg p-3 font-semibold', extraClass]}>
+<button class:list={[variants[variant], 'flex items-center justify-center rounded-lg p-3 font-medium', extraClass]}>
   {withIcon && <Icon />}
 
   {
