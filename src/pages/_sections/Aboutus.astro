@@ -6,39 +6,35 @@ import Title from '@/components/Title.astro'
 
 <Container
   as="section"
-  class="flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:items-start lg:items-center lg:justify-center"
+  class="items-left flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:items-center lg:justify-center"
   id="about"
 >
   <div class="flex flex-col gap-3 text-left lg:max-w-[559px] lg:max-w-full lg:gap-1">
     <div class="flex flex-col gap-1">
-      <Title as="h2" class="text-4xl">We're afiliated with the term innovation</Title>
+      <Title as="h2">We're afiliated with the term innovation</Title>
       <Text class="text-slate-600">Keeping all your apps connected ensures seamless data flow and automation.</Text>
     </div>
 
-    <div class="mt-8 flex gap-8">
+    <div class="mt-8 grid gap-8 sm:grid-cols-2">
       <!-- Items -->
 
-      <div class="flex flex-col gap-8">
-        <div>
-          <Text class="font-semibold text-gray-900">Easy Connect</Text>
-          <Text class="text-sm text-gray-500">Don’t hassle with menus and settings, just one click.</Text>
-        </div>
-        <div>
-          <Text class="font-semibold text-gray-900">Easy Connect</Text>
-          <Text class="text-sm text-gray-500">Don’t hassle with menus and settings, just one click.</Text>
-        </div>
+      <div>
+        <Text class="font-semibold text-slate-950">Easy Connect</Text>
+        <Text class="text-sm text-slate-600">Don’t hassle with menus and settings, just one click.</Text>
+      </div>
+      <div>
+        <Text class="font-semibold text-slate-950">Easy Connect</Text>
+        <Text class="text-sm text-slate-600">Don’t hassle with menus and settings, just one click.</Text>
       </div>
 
-      <div class="flex flex-col gap-8">
-        <div>
-          <Text class="font-semibold text-gray-900">Easy Connect</Text>
-          <Text class="text-sm text-gray-500">Don’t hassle with menus and settings, just one click.</Text>
-        </div>
+      <div>
+        <Text class="font-semibold text-slate-950">Easy Connect</Text>
+        <Text class="text-sm text-slate-600">Don’t hassle with menus and settings, just one click.</Text>
+      </div>
 
-        <div>
-          <Text class="font-semibold text-gray-900">Easy Connect</Text>
-          <Text class="text-sm text-gray-500">Don’t hassle with menus and settings, just one click.</Text>
-        </div>
+      <div>
+        <Text class="font-semibold text-slate-950">Easy Connect</Text>
+        <Text class="text-sm text-slate-600">Don’t hassle with menus and settings, just one click.</Text>
       </div>
     </div>
   </div>
@@ -46,6 +42,6 @@ import Title from '@/components/Title.astro'
   <img
     src="/images/phone.svg"
     alt="phone"
-    class="pointer-events-none hidden h-full self-center justify-self-center lg:flex"
+    class="pointer-events-none hidden h-[80%] self-center justify-self-center lg:flex"
   />
 </Container>
