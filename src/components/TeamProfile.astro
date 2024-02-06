@@ -14,9 +14,9 @@ interface Props extends HTMLAttributes<'div'> {
 const { title, subtitle, imageSrc, class: extraClass } = Astro.props
 ---
 
-<article class:list={['flex items-start gap-3', extraClass]}>
+<article class:list={['flex items-start gap-3 md:justify-center', extraClass]}>
   <Image circle title="yigsvnsla" size={64} src={imageSrc} />
-  <Container center={false} as="section" class="my-auto flex flex-col gap-1">
+  <Container center={false} as="div" class="my-auto flex flex-col gap-1">
     <Title class="text-xl">{title}</Title>
     <Text class="text-base text-gray-500">{subtitle}</Text>
   </Container>

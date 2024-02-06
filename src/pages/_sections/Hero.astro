@@ -3,44 +3,40 @@ import Title from '@/components/Title.astro'
 import Text from '@/components/Text.astro'
 import Button from '@/components/Button.astro'
 import Container from '@/components/Container.astro'
-
-// TODO
-// - Add interaction with the links (planning)
-// - Add to make the language selector change (last part of the proyect)
-// - Add links to every text / Tomorrow / I didnt do it 👍
 ---
 
-<Container as="section" class="grid h-[73dvh] grid-cols-2 items-start justify-center pt-[6%]">
-  <div class="flex flex-col justify-start gap-8">
-    <Title class="text-6xl font-bold text-slate-950">Get the best version of your company</Title>
+<Container
+  as="section"
+  class="grid h-[73dvh] items-center justify-center md:grid-cols-[1fr_35%] md:items-start xl:grid-cols-[1fr_45%]"
+>
+  <div class="mt-[80px] flex flex-col justify-start gap-8 text-left lg:text-left">
+    <Title class="text-4xl font-bold text-slate-950">Get the best version of your company</Title>
     <Text class="text-lg text-slate-600">
       Empowering Your Digital Universe. Elevate your projects, streamline development, and excel as a creator with
       premier web design and services.
     </Text>
 
-    <div class="flex w-full justify-between">
-      <div>
-        <Text class="text-sm font-semibold text-slate-700">Located</Text>
-        <Text as="strong" class="text-lg font-semibold text-slate-900">Ciudad de Mexico</Text>
+    <div class="grid grid-cols-2 content-center gap-8 font-semibold lg:flex lg:flex-wrap">
+      <div class="flex flex-col justify-center">
+        <Text as="label">Located</Text>
+        <Text class="text-lg text-slate-900">Ciudad de Mexico</Text>
       </div>
-      <div>
-        <Text class="text-sm font-semibold text-slate-700">Team Members</Text>
-        <Text as="strong" class="text-lg font-semibold text-slate-900">12</Text>
+      <div class="flex flex-col justify-center">
+        <Text as="label">Team Members</Text>
+        <Text class="text-lg text-slate-900">12</Text>
       </div>
-
-      <div>
-        <Text class="text-sm font-semibold text-slate-700">Working with us</Text>
-        <Text as="strong" class="text-lg font-semibold text-slate-900">+500</Text>
+      <div class="flex flex-col justify-center">
+        <Text as="label">Working with us</Text>
+        <Text class="text-lg text-slate-900">+500</Text>
       </div>
-
-      <div>
-        <Text class="text-sm font-semibold text-slate-700">Websites Done</Text>
-        <Text as="strong" class="text-lg font-semibold text-slate-900">40</Text>
+      <div class="flex flex-col justify-center">
+        <Text as="label">Websites done</Text>
+        <Text class="text-lg text-slate-900">40</Text>
       </div>
     </div>
 
-    <div class="flex gap-x-8 p-0">
-      <Button variant="primary">Let us know</Button>
+    <div class="mt-6 flex gap-8">
+      <Button>Give us a call</Button>
       <Button variant="secondary">Learn more →</Button>
     </div>
   </div>

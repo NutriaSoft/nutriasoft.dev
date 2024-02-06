@@ -10,6 +10,6 @@ interface Props extends Omit<HTMLAttributes<'section'>, 'slot'> {
 const { as: Tag = 'div', center = false, class: extraClass, id = '' } = Astro.props
 ---
 
-<Tag class:list={[{ 'mx-auto w-full max-w-7xl px-8': center || Tag === 'section' }, extraClass]} id={id}>
+<Tag class:list={[{ 'mx-auto w-full max-w-7xl': center || Tag === 'section' }, extraClass]} id={id}>
   <slot />
 </Tag>

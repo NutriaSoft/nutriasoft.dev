@@ -1,5 +1,7 @@
 ---
+import Button from '@/components/Button.astro'
 import Container from '@/components/Container.astro'
+import Icon from '@/components/Icon.astro'
 import TeamProfile from '@/components/TeamProfile.astro'
 import Text from '@/components/Text.astro'
 import Title from '@/components/Title.astro'
@@ -7,22 +9,30 @@ import Title from '@/components/Title.astro'
 const arrProfiles = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 ---
 
-<Container as="section" id="team" class="my-4 flex gap-8 px-8">
-  <div class="w-1/3">
+<Container as="section" id="team" class="flex flex-col gap-8 xl:flex-row xl:px-8">
+  <div class="w-full md:mx-auto md:w-2/3 md:text-center xl:w-1/3 xl:text-start">
     <Title class="text-4xl font-semibold leading-normal">Our Team</Title>
     <Text class="text-lg font-normal leading-normal text-slate-600">
       Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper suspendisse.
     </Text>
   </div>
-  <div class="grid w-3/4 grid-flow-row grid-cols-3 gap-x-8 gap-y-11">
-    {
-      arrProfiles.map(() => (
-        <TeamProfile
-          title="yigs"
-          subtitle="co-founder"
-          imageSrc="https://avatars.githubusercontent.com/u/55502763?v=4"
-        />
-      ))
-    }
-  </div>
+  <Container class="xl:w-3/4" center={false}>
+    <div
+      class="grid w-full grid-flow-row grid-cols-1 gap-x-8 gap-y-11 max-md:max-h-96 max-md:overflow-y-scroll md:grid-cols-3"
+    >
+      {
+        arrProfiles.map((_, index, arr) => (
+          <TeamProfile
+            title="yigs"
+            subtitle="co-founder"
+            imageSrc="https://avatars.githubusercontent.com/u/55502763?v=4"
+          />
+        ))
+      }
+    </div>
+    <Button type="link" class="mx-auto my-8 flex-grow-0 gap-0 p-1 px-3 text-xs capitalize">
+      see more
+      <Icon name="chevron" />
+    </Button>
+  </Container>
 </Container>

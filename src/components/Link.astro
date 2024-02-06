@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 
-import Text from '@/components/Text.astro'
+// import Text from '@/components/Text.astro'
 
 interface Props extends HTMLAttributes<'a'> {
   external?: boolean
@@ -14,7 +14,7 @@ const target = external ? '_blank' : undefined
 ---
 
 <a href={href} rel={rel} target={target} class:list={[extraClass]}>
-  <Text>
-    <slot />
-  </Text>
+  <!-- <Text> -->
+  <slot />
+  <!-- </Text> -->
 </a>
