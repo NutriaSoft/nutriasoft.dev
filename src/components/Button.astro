@@ -22,7 +22,9 @@ const variants = {
 } as const
 ---
 
-<button class:list={[variants[variant], 'flex items-center justify-center rounded-lg p-3 font-medium', extraClass]}>
+<button
+  class:list={[variants[variant], ' flex items-center justify-center rounded-lg p-3 text-sm font-medium', extraClass]}
+>
   {withIcon && <Icon />}
 
   {

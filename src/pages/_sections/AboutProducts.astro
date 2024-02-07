@@ -6,7 +6,7 @@ import Features from '@/components/Features.astro'
 ---
 
 <Container as="section" id="products" class="flex flex-col gap-20">
-  <div class="flex w-[559px] flex-col gap-1 text-left lg:mx-auto lg:text-center">
+  <div class="flex max-w-[559px] flex-col gap-1 text-left lg:mx-auto lg:text-center">
     <Title class="text-4xl font-semibold text-[#111827]">A simple model for you to quickly adapt</Title>
 
     <Text class="text-lg text-slate-600">
@@ -15,7 +15,7 @@ import Features from '@/components/Features.astro'
     </Text>
   </div>
 
-  <Container center={false} class="flex gap-8">
+  <Container center={false} class="flex flex-col gap-8 md:flex-row">
     <Features title="Find" label="The first day of the conference is focused on dark patterns for ecommerce.">
       <div class="flex flex-col gap-2 py-8">
         <Title>Get your product</Title>
