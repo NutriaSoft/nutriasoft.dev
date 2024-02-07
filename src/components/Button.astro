@@ -11,10 +11,10 @@ interface Props extends Omit<HTMLAttributes<'button'>, 'type'> {
   type?: types
   href?: types extends 'link' ? string | null : never
   withIcon?: boolean
-  variant?: keyof typeof variants
+  as?: keyof typeof variants
 }
 
-const { withIcon = false, variant = 'primary', type, href = null, class: extraClass } = Astro.props
+const { withIcon = false, as = 'primary', type, href = null, class: extraClass } = Astro.props
 
 const variants = {
   primary: 'bg-sky-600 text-sky-50',
@@ -22,9 +22,7 @@ const variants = {
 } as const
 ---
 
-<button
-  class:list={[variants[variant], ' flex items-center justify-center rounded-lg p-3 text-sm font-medium', extraClass]}
->
+<button class:list={[variants[as], ' flex items-center justify-center rounded-lg p-3 text-sm font-medium', extraClass]}>
   {withIcon && <Icon />}
 
   {
