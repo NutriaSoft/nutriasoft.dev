@@ -5,7 +5,7 @@ interface Props extends Omit<HTMLAttributes<'h1'>, 'slot'> {
   as?: Extract<HTMLTag, 'h1' | 'h2' | 'h3'>
 }
 
-const { as: Tag = 'h1', class: extraClass } = Astro.props
+const { as: Tag = 'h2', class: extraClass } = Astro.props
 ---
 
 <Tag class:list={['font-black', extraClass]}>
