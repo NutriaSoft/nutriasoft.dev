@@ -13,13 +13,13 @@ const { date, title, description } = Astro.props
 
 <div class="flex min-w-[300px] max-w-[30%] flex-col text-black">
   <div class="flex min-h-[111px] w-full flex-col rounded-2xl bg-slate-400"></div>
-  <Text class="mt-4 w-full text-xs">
+  <Text class="mt-4 w-full">
     {date}
   </Text>
-  <Title class="mt-4 text-lg font-semibold">
+  <Title as="h3" class="mt-4 text-xl font-semibold">
     {title}
   </Title>
-  <Text class="justify-center text-ellipsis text-sm leading-5 text-slate-600">
+  <Text class="text-truncate mt-3 w-full justify-center text-ellipsis leading-5 text-slate-600">
     {description}
   </Text>
 </div>

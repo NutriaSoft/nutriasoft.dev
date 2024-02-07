@@ -9,6 +9,16 @@ import Title from '@/components/Title.astro'
 const arrProfiles = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 ---
 
+<style>
+  .postsScroll {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .postsScroll::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+</style>
+
 <Container as="section" id="team" class="flex flex-col gap-8 xl:flex-row xl:px-8">
   <div class="w-full md:mx-auto md:w-2/3 md:text-center xl:w-1/3 xl:text-start">
     <Title class="text-4xl font-semibold leading-normal">Our Team</Title>
@@ -18,7 +28,7 @@ const arrProfiles = [0, 1, 2, 3, 4, 5, 6, 7, 8]
   </div>
   <Container class="xl:w-3/4" center={false}>
     <div
-      class="grid w-full grid-flow-row grid-cols-1 gap-x-8 gap-y-11 max-md:max-h-96 max-md:overflow-y-scroll md:grid-cols-3"
+      class="postsScroll grid w-full grid-flow-row grid-cols-1 gap-x-8 gap-y-11 max-md:max-h-96 max-md:overflow-y-scroll md:grid-cols-3"
     >
       {
         arrProfiles.map((_, index, arr) => (
@@ -30,9 +40,11 @@ const arrProfiles = [0, 1, 2, 3, 4, 5, 6, 7, 8]
         ))
       }
     </div>
-    <Button type="link" href="#">
-      see more
-      <Icon name="chevron" />
-    </Button>
+    <div class="mt-8 flex justify-center self-center lg:hidden">
+      <Button type="link" href="#" class="text-sm">
+        see more
+        <Icon name="chevron" />
+      </Button>
+    </div>
   </Container>
 </Container>
