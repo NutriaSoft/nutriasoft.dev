@@ -5,13 +5,36 @@ import Button from '@/components/Button.astro'
 import Container from '@/components/Container.astro'
 ---
 
+<style>
+  #shape {
+    background-color: #f0fdf4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    rotate: 45deg;
+    blur: 100px;
+    z-index: -1;
+
+    width: 300px;
+    border-radius: 100px;
+    height: 100px;
+  }
+
+  #shape2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+</style>
+
 <Container
   as="section"
   class="grid min-h-[73dvh] items-center justify-center md:grid-cols-[1fr_35%] md:items-start xl:grid-cols-[1fr_45%]"
 >
   <div class="mt-[80px] flex flex-col justify-start gap-8 text-left lg:text-left">
-    <Title class="text-4xl font-bold text-slate-950">Get the best version of your company</Title>
-    <Text class="text-lg text-slate-600">
+    <Title class="text-6xl font-bold text-slate-950">Get the best version of your company</Title>
+    <Text class="text-lg text-slate-700">
       Empowering Your Digital Universe. Elevate your projects, streamline development, and excel as a creator with
       premier web design and services.
     </Text>
@@ -37,7 +60,13 @@ import Container from '@/components/Container.astro'
 
     <div class="mt-6 flex gap-8">
       <Button>Give us a call</Button>
-      <Button as="secondary">Learn more →</Button>
+      <Button as="secondary">Learn more <span aria-hidden="true">→</span></Button>
     </div>
   </div>
+
+  <img
+    src="/images/beams.png"
+    class="font-4xl absolute right-0 top-0 -z-10 h-[100dvh] w-[50rem] max-w-none md:h-fit md:w-full"
+    alt=""
+  />
 </Container>

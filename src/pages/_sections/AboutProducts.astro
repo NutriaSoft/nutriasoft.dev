@@ -15,7 +15,7 @@ import Features from '@/components/Features.astro'
     </Text>
   </div>
 
-  <Container center={false} class="flex flex-col gap-8 md:flex-row">
+  <Container center={false} class="relative flex flex-col gap-8 md:flex-row">
     <Features title="Find" label="The first day of the conference is focused on dark patterns for ecommerce.">
       <div class="flex flex-col gap-2 py-8">
         <Title>Get your product</Title>
@@ -64,5 +64,10 @@ import Features from '@/components/Features.astro'
         <Text>This is where the magic starts</Text>
       </div>
     </Features>
+    <img
+      src="/images/productsbg.png"
+      class="absolute left-1/2 top-0 top-1/2 -z-10 h-full w-[130dvw] max-w-none -translate-x-1/2 -translate-y-1/2 transform md:h-[140dvh]"
+      alt=""
+    />
   </Container>
 </Container>
