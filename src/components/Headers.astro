@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components'
+import DarkMode from './DarkMode.astro'
+---
+
+<header
+  class="w-full bg-gradient-to-b from-white to-white/75 py-4 dark:bg-gradient-to-b dark:from-black dark:to-black/75"
+>
+  <section class="container mx-auto flex flex-row items-center justify-around sm:justify-between">
+    <a class="flex items-center gap-2">
+      <Icon class="size-10 rounded-full bg-white" name="nsLogo" />
+      <span class="font-WorkSans-Bold text-xl dark:text-white">NutriaSoft</span>
+    </a>
+
+    <ul class="hidden flex-row gap-4 font-Inter-SemiBold dark:text-white md:flex">
+      <li class="cursor-pointer">Service</li>
+      <li class="cursor-pointer">Products</li>
+      <li class="cursor-pointer">About us</li>
+      <li class="cursor-pointer">Contact</li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <DarkMode />
+      <a
+        class="flex cursor-pointer flex-row gap-2.5 rounded-md border border-white bg-black px-5 py-2 text-white invert"
+      >
+        <span class="font-Inter-Regular text-xs capitalize">contact us</span>
+        <Icon name="nsEnvelope" />
+      </a>
+    </div>
+  </section>
+</header>

@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import nsImageBrand1 from '../../public/img/nsImage-brand-1.png'
+---
+
+<section class="container mx-auto grid grid-cols-2 pb-16 pt-16">
+  <div class="flex flex-col justify-center gap-6">
+    <h3 class="font-Inter-SemiBold text-4xl">Your Needs, Your Terms</h3>
+    <p class="py-4 font-Inter-Regular text-lg">
+      We provide comprehensive technological solutions for large, medium and small companies, fulfilling the objective
+      and commitment to each client, being part of the digital transformation of your company with the experience of our
+      human talent.
+    </p>
+    <a
+      class="flex w-max cursor-pointer flex-row items-center gap-2.5 rounded-[14px] bg-black px-[15px] py-[13.5px] font-Inter-SemiBold text-lg capitalize text-white drop-shadow-md"
+    >
+      Get to know us more
+      <Icon class="size-6" name="nsChevronRigth" />
+    </a>
+  </div>
+  <div class="flex justify-center">
+    <Image class="drop-shadow-md" src={nsImageBrand1} alt="" />
+  </div>
+</section>

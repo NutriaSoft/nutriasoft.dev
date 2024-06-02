@@ -1,22 +1,32 @@
 ---
+import Testimonials from '@/components/Testimonials.astro'
+import Services from '@/components/Services.astro'
+import Brand1 from '@/components/Brand-1.astro'
+// import Brand2 from '@/components/Brand-2.astro'
+// import Brand3 from '@/components/Brand-3.astro'
+import Header from '@/components/Headers.astro'
+import Banner from '@/components/Banner.astro'
+import Footer from '@/components/Footer.astro'
+import Stats from '@/components/Stats.astro'
+import Logos from '@/components/Logos.astro'
 import Layout from '@/layouts/Layout.astro'
-import Hero from '@/pages/_sections/Hero.astro'
-import Aboutus from '@/pages/_sections/Aboutus.astro'
-import AboutProducts from '@/pages/_sections/AboutProducts.astro'
-import Marketplace from '@/pages/_sections/Marketplace.astro'
-import Blog from '@/pages/_sections/Blog.astro'
-import Team from '@/pages/_sections/Team.astro'
-import Footer from '@/pages/_sections/Footer.astro'
+import Team from '@/components/Team.astro'
 ---
 
-<Layout title="NutriaSoft">
-  <div class="flex flex-col gap-40 overflow-hidden px-6 md:px-8">
-    <Hero />
-    <Aboutus />
-    <AboutProducts />
-    <Marketplace />
+<Layout>
+  <Header />
+  <main class="bg-white/75 dark:bg-black/75">
+    <Banner />
+    <Services />
+    <Stats />
+    <Logos />
+    <Brand1 />
+    <Brand1 />
+    <Brand1 />
+    <!-- <Brand2 />
+    <Brand3 /> -->
+    <Testimonials />
     <Team />
-    <Blog />
-    <Footer />
-  </div>
+  </main>
+  <Footer />
 </Layout>

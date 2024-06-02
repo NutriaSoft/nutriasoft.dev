@@ -1,13 +1,6 @@
 ---
-import Navbar from '@/components/Navbar.astro'
-
-interface Props {
-  title: string
-  description?: string
-}
-
 const ORIGIN_URL = import.meta.env.ORIGIN_URL
-const { title, description = 'NutriaSoft Landing Page' } = Astro.props
+const { title = 'NutriaSoft', description = 'NutriaSoft Landing Page' } = Astro.props
 ---
 
 <!doctype html>
@@ -21,38 +14,60 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
 
     <link rel="icon" type="image/png" sizes="32x32" href="logo.png" />
     <link rel="apple-touch-icon" href="logo.png" />
+
     <meta name="theme-color" content="#06C" />
 
     <meta name="og:site_name" property="og:site_name" content={title} />
     <meta name="og:type" property="og:type" content="website" />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={ORIGIN_URL} />
-    <meta property="og:image" content={`${ORIGIN_URL}/preview.png`} />
+    <meta property="og:image" content={`${ORIGIN_URL}/img/page-preview.webp`} />
 
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={`${ORIGIN_URL}/preview.png`} />
+    <meta name="twitter:image" content={`${ORIGIN_URL}/img/page-preview.webp`} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <style is:global>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
 
-    <style>
-      body {
-        font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Tailwind CSS classes for dark mode */
+      .dark .sun {
+        @apply fill-transparent;
+      }
+      .dark .moon {
+        @apply fill-white;
+      }
 
-        scroll-behavior: smooth;
+      @layer base {
+        @font-face {
+          font-family: 'WorkSans-Bold';
+          font-weight: 700;
+          src: url('/fonts/WorkSans/WorkSans-Bold.ttf');
+        }
+
+        @font-face {
+          font-family: 'Inter-SemiBold';
+          font-weight: 600;
+          src: url('/fonts/Inter/Inter-SemiBold.ttf');
+        }
+
+        @font-face {
+          font-family: 'Inter-Regular';
+          font-weight: 400;
+          src: url('/fonts/Inter/Inter-Regular.ttf');
+        }
       }
     </style>
   </head>
 
-  <body class="flex min-h-screen flex-col bg-[#FAFAFA]">
-    <Navbar />
+  <body class="flex min-h-screen flex-col bg-dots dark:backdrop-invert">
     <slot />
   </body>
 </html>
+
+<!-- <div class="fixed left-0 top-0 -z-10 h-full w-full"><div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div></div> -->

@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const services = [
+  {
+    title: 'Web App Development',
+    icon: 'nsGlobeAt',
+    description: 'Estandar work and coding we provide you for your'
+  },
+  {
+    title: 'Mobile Development',
+    icon: 'nsMobile',
+    description: 'Estandar work and coding we provide you for your'
+  },
+  {
+    title: 'Consulting',
+    icon: 'nsSearch',
+    description: 'Estandar work and coding we provide you for your'
+  },
+  {
+    title: 'UX/UI',
+    icon: 'nsPaintBrush',
+    description: 'Estandar work and coding we provide you for your'
+  }
+]
+---
+
+<section class="container mx-auto grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 sm:py-16 md:grid-cols-4 md:px-0">
+  {
+    services.map((service) => (
+      <div class="scale-100 cursor-pointer rounded-2xl border-2 border-black bg-white p-4 shadow-sm drop-shadow-md transition ease-in-out hover:scale-105 dark:border-white dark:bg-gray-400/10 dark:text-white">
+        <h3 class="flex items-center justify-between font-Inter-SemiBold text-xl">
+          {service.title} <Icon class="size-6" name={service.icon} />
+        </h3>
+        <p class="py-4 font-Inter-Regular text-sm">{service.description}</p>
+        <a class="block w-full text-right font-Inter-Regular text-xs text-lime-600 underline  underline-offset-2 dark:text-[#d5fa51]">
+          Lear more
+        </a>
+      </div>
+    ))
+  }
+</section>
