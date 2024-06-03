@@ -1,4 +1,6 @@
 ---
+import Header from '@/sections/landing/Header.astro'
+import Footer from '@/components/Footer.astro'
 const ORIGIN_URL = import.meta.env.ORIGIN_URL
 const { title = 'NutriaSoft', description = 'NutriaSoft Landing Page' } = Astro.props
 ---
@@ -66,7 +68,11 @@ const { title = 'NutriaSoft', description = 'NutriaSoft Landing Page' } = Astro.
   </head>
 
   <body class="flex min-h-screen flex-col bg-dots dark:backdrop-invert">
-    <slot />
+    <Header />
+    <main class="bg-white/75 dark:bg-black/75">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
