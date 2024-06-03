@@ -1,32 +1,27 @@
 ---
-import Testimonials from '@/components/Testimonials.astro'
-import Services from '@/components/Services.astro'
-import Brand1 from '@/components/Brand-1.astro'
-// import Brand2 from '@/components/Brand-2.astro'
-// import Brand3 from '@/components/Brand-3.astro'
-import Header from '@/components/Headers.astro'
-import Banner from '@/components/Banner.astro'
-import Footer from '@/components/Footer.astro'
-import Stats from '@/components/Stats.astro'
-import Logos from '@/components/Logos.astro'
+import Jumbotron from '@/sections/landing/Jumbotron.astro'
+import Services from '@/sections/landing/Services.astro'
+import Stats from '@/sections/landing/Stats.astro'
+import Works from '@/sections/landing/Works.astro'
+import Brands from '@/sections/landing/Brands.astro'
+import Testimonials from '@/sections/landing/Testimonials.astro'
+import Team from '@/sections/landing/Team.astro'
 import Layout from '@/layouts/Layout.astro'
-import Team from '@/components/Team.astro'
 ---
 
 <Layout>
-  <Header />
-  <main class="bg-white/75 dark:bg-black/75">
-    <Banner />
-    <Services />
-    <Stats />
-    <Logos />
-    <Brand1 />
-    <Brand1 />
-    <Brand1 />
-    <!-- <Brand2 />
-    <Brand3 /> -->
-    <Testimonials />
-    <Team />
-  </main>
-  <Footer />
+  <!-- seccion inicial de entrada  -->
+  <Jumbotron />
+  <!-- seccion de servicios -->
+  <Services />
+  <!-- seccion de estadisticas -->
+  <Stats />
+  <!-- seccion de trabajos -->
+  <Works />
+  <!-- seccion de marcas -->
+  <Brands />
+  <!-- seccion de testimonios -->
+  <Testimonials />
+  <!-- seccion de equipo -->
+  <Team />
 </Layout>
