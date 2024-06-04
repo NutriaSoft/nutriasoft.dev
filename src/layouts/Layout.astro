@@ -1,12 +1,9 @@
 ---
-import Header from '@/components/Header.astro'
-
 interface Props {
   title: string
   description?: string
 }
 
-const ORIGIN_URL = import.meta.env.ORIGIN_URL
 const { title, description = 'NutriaSoft Landing Page' } = Astro.props
 ---
 
@@ -19,42 +16,36 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
     <title>{title}</title>
     <meta name="description" content={description} />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="logo.png" />
-    <link rel="apple-touch-icon" href="logo.png" />
-    <meta name="theme-color" content="#06C" />
-
-    <meta name="og:site_name" property="og:site_name" content={title} />
-    <meta name="og:type" property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={ORIGIN_URL} />
-    <meta property="og:image" content={`${ORIGIN_URL}/preview.png`} />
-
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={`${ORIGIN_URL}/preview.png`} />
+    <meta name="theme-color" content="#1F1F1F" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
 
     <style>
       @font-face {
-        font-family: 'Switzer';
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-        src: url('/fonts/switzer-variable.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Titan One';
+        font-family: 'Inter';
         font-weight: 400;
         font-style: normal;
         font-display: swap;
-        src: url('/fonts/titan-one.woff2') format('woff2');
+        src: url('/fonts/inter-400.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+        src: url('/fonts/inter-500.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+        src: url('/fonts/inter-600.woff2') format('woff2');
       }
     </style>
   </head>
 
-  <body class="min-h-screen bg-[#FAFAFA] font-switzer text-black">
-    <Header />
+  <body class="min-h-screen bg-white font-inter text-black">
     <slot />
   </body>
 </html>

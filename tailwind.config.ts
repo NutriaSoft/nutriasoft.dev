@@ -12,12 +12,11 @@ const config: Config = {
     },
 
     fontFamily: {
-      switzer: ['Switzer', 'sans-serif'],
-      titan: ['Titan One', 'sans-serif']
+      inter: ['Inter', 'sans-serif']
     },
 
     colors: {
-      primary: '#06C',
+      primary: '#D5FA51',
 
       gray: {
         100: '#363B42',
@@ -25,7 +24,7 @@ const config: Config = {
       },
 
       white: '#FFF',
-      black: '#060606',
+      black: '#1F1F1F',
       transparent: 'transparent'
     },
 
