@@ -3,18 +3,17 @@ import { readdirSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 
 /**
  * @param {import('astro').AstroIntegrationLogger} logger
-*/
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+ */
 export function generateIconTypes (logger) {
   const iconsDir = join(process.cwd(), 'src/icons')
   const files = readdirSync(iconsDir)
-  const svgFiles = files.filter(file => file.endsWith('.svg'))
+  const svgFiles = files.filter((file) => file.endsWith('.svg'))
 
-  const iconNames = svgFiles.map(file => file.replace('.svg', ''))
+  const iconNames = svgFiles.map((file) => file.replace('.svg', ''))
 
   const typeDefinitions = `declare module 'virtual:icon' {
   export type IconName =
-    | ${iconNames.map(name => `'${name}'`).join('\n    | ')}
+    | ${iconNames.map((name) => `'${name}'`).join('\n    | ')}
 }
 `
 
