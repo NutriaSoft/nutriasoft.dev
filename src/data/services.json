@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "title": "Website Development",
+      "link": "#",
+      "icon": "code",
+      "content": "Standar work and coding we provide you for your"
+    },
+    {
+      "title": "Mobile Development",
+      "link": "#",
+      "icon": "code",
+      "content": "Standar work and coding we provide you for your"
+    },
+    {
+      "title": "Backend Development",
+      "link": "#",
+      "icon": "code",
+      "content": "Standar work and coding we provide you for your"
+    },
+    {
+      "title": "UX/UI Development",
+      "link": "#",
+      "icon": "code",
+      "content": "Standar work and coding we provide you for your"
+    }
+  ]
+}
