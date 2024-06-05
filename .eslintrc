@@ -7,13 +7,12 @@
   "ignorePatterns": ["dist"],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:astro/recommended",
-    "standard-with-typescript"
+    "plugin:@typescript-eslint/recommended"
   ],
   "overrides": [
     {
       "files": ["*.astro"],
+      "extends": "plugin:astro/recommended",
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
@@ -24,7 +23,12 @@
       }
     },
     {
+      "files": ["*.js"],
+      "extends": "standard"
+    },
+    {
       "files": ["*.ts"],
+      "extends": "standard-with-typescript",
       "rules": {
         "@typescript-eslint/triple-slash-reference": "off"
       }

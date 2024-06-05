@@ -9,12 +9,12 @@
     "preview": "astro preview",
     "prepare": "husky install .husky",
     "build": "astro check && astro build",
-    "lint": "eslint --fix src/**/*.{astro,ts}",
-    "format": "prettier --write src/**/*.astro"
+    "lint": "eslint --fix src/**/*.{astro,js,ts}",
+    "format": "prettier --write src/**/*.{astro,js,ts}"
   },
   "engines": {
-    "node": ">=18.18.0",
-    "pnpm": ">=8.10.0"
+    "node": ">=20.12.0",
+    "pnpm": ">=8.15.0"
   },
   "dependencies": {
     "astro": "4.2.8"
@@ -33,6 +33,7 @@
     "prettier": "3.3.0",
     "prettier-plugin-astro": "0.14.0",
     "prettier-plugin-tailwindcss": "0.6.1",
+    "standard": "17.1.0",
     "tailwindcss": "3.4.3",
     "typescript": "5.3.3"
   },
