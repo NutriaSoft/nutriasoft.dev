@@ -47,7 +47,9 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
     </style>
   </head>
 
-  <body class="h-[300vh] bg-white bg-[url(/images/dots.svg)] font-inter text-black">
+  <body
+    class="min-h-screen font-inter text-black before:absolute before:inset-0 before:-z-10 before:bg-[url(/images/dots.svg)] before:opacity-50 before:content-['']"
+  >
     <Navbar />
     <slot />
   </body>

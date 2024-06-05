@@ -15,20 +15,15 @@ const config: Config = {
       inter: ['Inter', 'sans-serif']
     },
 
-    colors: {
-      primary: '#D5FA51',
+    extend: {
+      colors: {
+        primary: '#D5FA51',
 
-      gray: {
-        100: '#363B42',
-        200: '#2E2E2F'
-      },
-
-      white: '#FFF',
-      black: '#1F1F1F',
-      transparent: 'transparent'
-    },
-
-    extend: {}
+        white: '#FFF',
+        black: '#1F1F1F',
+        transparent: 'transparent'
+      }
+    }
   },
 
   plugins: []
