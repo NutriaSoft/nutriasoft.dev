@@ -1,0 +1,14 @@
+---
+import { Icon as AstroIcon } from 'astro-icon/components'
+import type { IconName } from 'virtual:icon'
+
+interface Props {
+  name: IconName
+  size?: number
+  title?: string
+  width?: number
+  height?: number
+}
+---
+
+<AstroIcon {...Astro.props} />

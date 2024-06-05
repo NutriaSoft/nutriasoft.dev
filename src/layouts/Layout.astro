@@ -1,4 +1,6 @@
 ---
+import Navbar from '@/components/Navbar.astro'
+
 interface Props {
   title: string
   description?: string
@@ -45,7 +47,8 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
     </style>
   </head>
 
-  <body class="min-h-screen bg-white font-inter text-black">
+  <body class="h-[300vh] bg-white bg-[url(/images/dots.svg)] font-inter text-black">
+    <Navbar />
     <slot />
   </body>
 </html>
