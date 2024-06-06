@@ -1,11 +1,11 @@
 ---
 import type { HTMLTag, Polymorphic } from 'astro/types'
 
-type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag; unlimited?: boolean }>
 
-const { as: Tag = 'div', class: extraClass, ...props } = Astro.props
+const { as: Tag = 'div', unlimited = false, class: extraClass, ...props } = Astro.props
 ---
 
-<Tag {...props} class:list={['mx-auto max-w-6xl px-6', extraClass]}>
+<Tag {...props} class:list={[{ 'mx-auto max-w-6xl px-6': !unlimited }, extraClass]}>
   <slot />
 </Tag>

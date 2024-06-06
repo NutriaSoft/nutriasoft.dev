@@ -4,7 +4,7 @@ import Link from '@/components/Link.astro'
 import Container from '@/components/Container.astro'
 ---
 
-<header class="sticky top-0 z-30 w-full bg-white py-6">
+<Container unlimited as="header" class="sticky top-0 z-30 w-full bg-white py-6">
   <Container class="flex items-center justify-between">
     <Icon name="logotype" width={158} height={42} />
     <nav class="hidden gap-x-6 text-sm font-semibold md:flex">
@@ -18,4 +18,4 @@ import Container from '@/components/Container.astro'
       <Icon name="arrow" width={22} height={8} />
     </Link>
   </Container>
-</header>
+</Container>
