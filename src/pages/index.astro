@@ -9,6 +9,7 @@ import products from '@/data/products.json'
 import Image from '@/components/Image.astro'
 import Input from '@/components/Input.astro'
 import Button from '@/components/Button.astro'
+import Footer from '@/components/Footer.astro'
 import Container from '@/components/Container.astro'
 import ServiceCard from '@/components/ServiceCard.astro'
 import ProductCard from '@/components/ProductCard.astro'
@@ -111,10 +112,12 @@ import ProductCard from '@/components/ProductCard.astro'
       </Container>
       <Container
         unlimited
-        class="absolute left-0 right-0 top-2/3 z-30 hidden h-1/2 w-full place-items-center bg-gradient-to-t from-white via-white to-transparent xl:grid"
+        class="absolute left-0 right-0 top-1/2 z-30 hidden h-1/2 w-full place-items-center bg-gradient-to-t from-white via-white to-transparent xl:grid"
       >
         <Link to="#" class="btn btn-compact">Go to marketplace</Link>
       </Container>
     </Container>
   </Container>
+
+  <Footer />
 </Layout>

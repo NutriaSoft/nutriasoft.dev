@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "title": "Facebook",
+      "icon": "facebook",
+      "link": "https://www.facebook.com/"
+    },
+    {
+      "title": "X",
+      "icon": "x",
+      "link": "https://x.com/"
+    },
+    {
+      "title": "Linkedin",
+      "icon": "linkedin",
+      "link": "https://www.linkedin.com/"
+    },
+    {
+      "title": "Github",
+      "icon": "github",
+      "link": "https://github.com/"
+    }
+  ]
+}
