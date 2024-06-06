@@ -2,6 +2,7 @@
 import type { IconName } from 'virtual:icon'
 
 import Icon from '@/components/Icon.astro'
+import Link from '@/components/Link.astro'
 import Layout from '@/layouts/Layout.astro'
 import services from '@/data/services.json'
 import Image from '@/components/Image.astro'
@@ -33,7 +34,7 @@ import ServiceCard from '@/components/ServiceCard.astro'
         <Button id="we-contact-you" variant="compact" label="We contact you" class="min-w-40" />
       </div>
     </article>
-    <Image alt="Nutrialez" width={440} height={276} src="/images/otter.svg" />
+    <Image fetchpriority="high" alt="Nutrialez" width={440} height={276} src="/images/otter.svg" />
   </Container>
 
   <Container as="section" class="flex gap-x-6 overflow-x-auto md:pt-44 lg:justify-between lg:gap-x-0">
@@ -42,5 +43,59 @@ import ServiceCard from '@/components/ServiceCard.astro'
         <ServiceCard {content} icon={icon as IconName} {link} {title} />
       ))
     }
+  </Container>
+
+  <Container
+    as="section"
+    class="grid w-full items-center pt-28 md:grid-cols-[302px_auto] lg:grid-cols-[444px_auto] lg:justify-between"
+  >
+    <article class="flex w-full flex-col gap-y-14">
+      <div class="flex flex-col gap-y-4">
+        <h2 class="text-[2.5rem] font-bold leading-tight">Your Needs, Your Terms</h2>
+        <p class="text-pretty text-base text-slate-600">
+          Embrace flexibility with our on-demand services. We adapt to your requirements, delivering solutions when you
+          need them, ensuring your journey is as dynamic as your goals.
+        </p>
+      </div>
+      <Link to="#" class="btn btn-primary flex w-max items-center gap-x-2 text-lg font-semibold">
+        Get to know us more
+        <Icon name="chevron" size={24} />
+      </Link>
+    </article>
+    <Image
+      lazy
+      alt="Statistics Dashboard"
+      width={505}
+      height={365}
+      src="/images/statistics-dashboard-1.png"
+      class="hidden md:block"
+    />
+  </Container>
+
+  <Container
+    as="section"
+    class="grid w-full items-center justify-between gap-x-8 pt-20 md:grid-cols-[auto_302px] lg:grid-cols-[auto_444px]"
+  >
+    <Image
+      lazy
+      alt="Statistics Dashboard"
+      width={505}
+      height={365}
+      src="/images/statistics-dashboard-2.png"
+      class="hidden md:block"
+    />
+    <article class="flex w-full flex-col gap-y-14">
+      <div class="flex flex-col gap-y-4">
+        <h2 class="text-[2.5rem] font-bold leading-tight">Your Needs, Your Terms</h2>
+        <p class="text-pretty text-base text-slate-600">
+          Embrace flexibility with our on-demand services. We adapt to your requirements, delivering solutions when you
+          need them, ensuring your journey is as dynamic as your goals.
+        </p>
+      </div>
+      <Link to="#" class="btn btn-primary flex w-max items-center gap-x-2 text-lg font-semibold">
+        Get to know us more
+        <Icon name="chevron" size={24} />
+      </Link>
+    </article>
   </Container>
 </Layout>
