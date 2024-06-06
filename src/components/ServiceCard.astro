@@ -2,10 +2,11 @@
 import type { IconName } from 'virtual:icon'
 
 import Icon from '@/components/Icon.astro'
+import Link from '@/components/Link.astro'
 
 interface Props {
+  link: string
   title: string
-  link?: string
   icon?: IconName
   content?: string
 }
@@ -14,11 +15,11 @@ const { title, content, icon, link } = Astro.props
 ---
 
 <article class="w-max min-w-56 rounded-2xl border border-gray-300 bg-white hover:bg-primary">
-  <a href={link} class="grid gap-y-7 px-6 py-4 text-black">
+  <Link to={link} class="grid gap-y-7 px-6 py-4 text-black">
     {icon ? <Icon name={icon} size={60} /> : null}
 
     <h3 class="font-semibold">{title}</h3>
     {content ? <p class="max-w-36 text-xs">{content}</p> : null}
     <span class="text-[10px] underline">Learn more</span>
-  </a>
+  </Link>
 </article>

@@ -1,0 +1,27 @@
+---
+import { Image as AstroImage } from 'astro:assets'
+import type { ComponentProps } from 'astro/types'
+
+type Props = ComponentProps<typeof AstroImage> &
+  (
+    | {
+        src: string
+        lazy?: boolean
+        inferSize?: false
+        width: number | `${number}`
+        height: number | `${number}`
+      }
+    | {
+        src: string
+        lazy?: boolean
+        inferSize: true
+        width?: number | `${number}`
+        height?: number | `${number}`
+      }
+  )
+
+const { src, lazy = false, class: extraClass, ...restProps } = Astro.props
+const loading = lazy ? 'lazy' : 'eager'
+---
+
+<AstroImage {src} {loading} {...restProps} class={extraClass} />

@@ -1,19 +1,21 @@
 ---
 import Icon from '@/components/Icon.astro'
+import Link from '@/components/Link.astro'
+import Container from '@/components/Container.astro'
 ---
 
-<header class="sticky top-0 w-full bg-white py-6">
-  <div class="mx-auto flex max-w-5xl items-center justify-between px-4">
+<header class="sticky top-0 z-30 w-full bg-white py-6">
+  <Container class="flex items-center justify-between">
     <Icon name="logotype" width={158} height={42} />
     <nav class="hidden gap-x-6 text-sm font-semibold md:flex">
-      <a href="#">Services</a>
-      <a href="#">Products</a>
-      <a href="#">About us</a>
-      <a href="#">Contact</a>
+      <Link to="#">Services</Link>
+      <Link to="#">Products</Link>
+      <Link to="#">About us</Link>
+      <Link to="#">Contact</Link>
     </nav>
-    <a href="#" class="flex items-center gap-x-2 rounded-md bg-black px-5 py-2 text-xs font-semibold text-white">
+    <Link to="#" class="btn btn-large flex items-center gap-x-2 text-xs font-semibold">
       Contact us
       <Icon name="arrow" width={22} height={8} />
-    </a>
-  </div>
+    </Link>
+  </Container>
 </header>
