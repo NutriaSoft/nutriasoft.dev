@@ -1,18 +1,17 @@
 ---
 import type { IconName } from 'virtual:icon'
 
+import stats from '@/data/stats.json'
 import Icon from '@/components/Icon.astro'
 import Link from '@/components/Link.astro'
 import Layout from '@/layouts/Layout.astro'
 import services from '@/data/services.json'
-import products from '@/data/products.json'
 import Image from '@/components/Image.astro'
 import Input from '@/components/Input.astro'
 import Button from '@/components/Button.astro'
 import Footer from '@/components/Footer.astro'
 import Container from '@/components/Container.astro'
 import ServiceCard from '@/components/ServiceCard.astro'
-import ProductCard from '@/components/ProductCard.astro'
 ---
 
 <Layout title="NutriaSoft">
@@ -103,7 +102,7 @@ import ProductCard from '@/components/ProductCard.astro'
       </Container>
     </Container>
 
-    <Container unlimited as="section" class="relative pt-40">
+    <!-- <Container unlimited as="section" class="relative pt-40">
       <Container>
         <h3 class="text-center text-4xl font-semibold leading-tight">Checkout our products</h3>
         <Container unlimited as="section" class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-8 pt-8">
@@ -116,6 +115,23 @@ import ProductCard from '@/components/ProductCard.astro'
       >
         <Link to="#" class="btn btn-compact">Go to marketplace</Link>
       </Container>
+    </Container> -->
+
+    <Container as="section" class="mt-40 bg-[url(/images/clouds-blur.svg)] bg-top bg-no-repeat bg-origin-content">
+      <div class="py-24 sm:py-36">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+            {
+              stats.data.map(({ description, stat }) => (
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dd class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{stat}</dd>
+                  <dt class="text-base leading-7 text-gray-600">{description}</dt>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
     </Container>
   </Container>
 
