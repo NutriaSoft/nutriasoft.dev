@@ -10,17 +10,48 @@ interface Props {
   title: string
   icon?: IconName
   content?: string
+  type?: 'card' | 'article'
 }
 
-const { title, content, icon, link } = Astro.props
+const { title, content, icon, link, type = 'card' } = Astro.props
 ---
 
-<Container unlimited class="w-max min-w-56 rounded-2xl border border-gray-300 bg-white hover:bg-primary">
-  <Link to={link} class="grid gap-y-7 px-6 py-4 text-black">
-    {icon ? <Icon name={icon} size={60} /> : null}
+{
+  type === 'card' && (
+    <Container unlimited class="w-max min-w-56 rounded-2xl border border-gray-300 bg-white hover:bg-primary">
+      <Link to={link} class="grid gap-y-7 px-6 py-4 text-black">
+        {icon ? <Icon name={icon} size={60} /> : null}
 
-    <h3 class="font-semibold">{title}</h3>
-    {content ? <p class="max-w-36 text-xs">{content}</p> : null}
-    <span class="text-[10px] underline">Learn more</span>
-  </Link>
-</Container>
+        <h3 class="font-semibold">{title}</h3>
+        {content ? <p class="max-w-36 text-xs">{content}</p> : null}
+        <span class="text-[10px] underline">Learn more</span>
+      </Link>
+    </Container>
+  )
+}
+
+{
+  type === 'article' && (
+    <Container unlimited as="article" class="group flex flex-col">
+      <dt class="mb-6 flex items-center justify-start gap-3 text-base font-semibold capitalize leading-7 text-gray-900">
+        {icon ? (
+          <div class="flex size-10 items-center justify-center rounded-lg bg-primary">
+            <Icon name={icon} class="size-6 text-black" />
+          </div>
+        ) : null}
+        {title}
+      </dt>
+      <dd class="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
+        <p class="flex-auto">{content}</p>
+
+        <Link to={link} class="relative mt-6 cursor-pointer text-sm font-semibold leading-6 text-black">
+          Learn more
+          <Icon
+            name="long-underline"
+            class="absolute -left-2 top-[6px] -z-10 w-[90px] text-transparent transition-colors group-hover:text-primary"
+          />
+        </Link>
+      </dd>
+    </Container>
+  )
+}

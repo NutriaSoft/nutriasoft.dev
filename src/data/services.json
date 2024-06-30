@@ -1,5 +1,5 @@
 {
-  "data": [
+  "cards": [
     {
       "title": "Website Development",
       "link": "#",
@@ -23,6 +23,26 @@
       "link": "#",
       "icon": "code",
       "content": "Standar work and coding we provide you for your"
+    }
+  ],
+  "articles": [
+    {
+      "title": "Digital Transformation",
+      "link": "#",
+      "icon": "persons",
+      "content": "In our development factories we integrate technologies, manage projects, achieving tangible results based on agile approaches, in addition to being characterized by predictable development activities and reduction of the amount of work due to the reuse of components for results of the highest quality."
+    },
+    {
+      "title": "Integration Services",
+      "link": "#",
+      "icon": "console",
+      "content": "Connect your various enterprise applications to share data and use it in your business processes without requiring significant changes to your applications or data structures. We also offer a solution to accelerate your business innovation by integrating cloud applications or company software."
+    },
+    {
+      "title": "Universe Of Solutions",
+      "link": "#",
+      "icon": "briefcase",
+      "content": "We provide comprehensive technological solutions for large, medium and small companies, fulfilling the objective and commitment to each client, being part of the digital transformation of your company with the experience of our human talent."
     }
   ]
 }

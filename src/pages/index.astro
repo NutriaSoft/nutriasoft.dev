@@ -42,8 +42,8 @@ import ServiceCard from '@/components/ServiceCard.astro'
 
     <Container as="section" class="flex gap-x-6 overflow-x-auto pt-20 md:pt-44 lg:justify-between lg:gap-x-0">
       {
-        services.data.map(({ content, icon, link, title }) => (
-          <ServiceCard {content} icon={icon as IconName} {link} {title} />
+        services.cards.map(({ content, icon, link, title }) => (
+          <ServiceCard type="card" {content} icon={icon as IconName} {link} {title} />
         ))
       }
     </Container>
@@ -133,7 +133,26 @@ import ServiceCard from '@/components/ServiceCard.astro'
         </div>
       </div>
     </Container>
-  </Container>
 
-  <Footer />
+    <Container as="section" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Stay on top of customer support</h2>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Our lines of business provide our clients with appropriate support in the search for comprehensive solutions
+          at the business level, along with the experience of our consultants and the commitment to quality provided.
+        </p>
+      </div>
+      <div class="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none">
+        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+          {
+            services.articles.map(({ content, icon, link, title }) => (
+              <ServiceCard type="article" {content} icon={icon as IconName} {link} {title} />
+            ))
+          }
+        </dl>
+      </div>
+    </Container>
+
+    <Footer />
+  </Container>
 </Layout>
