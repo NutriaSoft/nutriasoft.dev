@@ -12,7 +12,7 @@ import Container from '@/components/Container.astro'
       <ul class="flex gap-x-6 text-sm font-semibold">
         {
           navigation.data.map(({ link, title }) => (
-            <li>
+            <li class="hover:underline">
               <Link to={link}>{title}</Link>
             </li>
           ))

@@ -2,19 +2,15 @@
   "data": [
     {
       "title": "Services",
-      "link": "#"
-    },
-    {
-      "title": "Products",
-      "link": "#"
+      "link": "#services"
     },
     {
       "title": "About us",
-      "link": "#"
+      "link": "#about-us"
     },
     {
       "title": "Contact",
-      "link": "#"
+      "link": "#hero"
     }
   ]
 }
