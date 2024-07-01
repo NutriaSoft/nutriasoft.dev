@@ -1,4 +1,4 @@
-import { API_URL, REGEX_EMAIL } from './consts'
+import { REGEX_EMAIL } from './consts'
 import { $checkIcon, $contactForm, $input, $positiveMessage } from './declareRefs'
 
 export function handleSubmit (possibleEmail: string): void {
@@ -29,7 +29,7 @@ async function saveEmail (email: string): Promise<void> {
   }
 
   try {
-    const response = await fetch(`${API_URL}/contact`, requestOptions)
+    const response = await fetch('/api/contact', requestOptions)
     const { ok } = (await response.json()) as { ok: boolean, message?: string }
 
     if (ok) {
