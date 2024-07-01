@@ -4,7 +4,7 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: ['./src/**/*.{astro,html}'],
 
-  safelist: ['btn', 'btn-primary', 'btn-compact', 'btn-large'],
+  safelist: ['btn', 'btn-primary', 'btn-compact', 'btn-large', 'border-green-500'],
 
   theme: {
     screens: {

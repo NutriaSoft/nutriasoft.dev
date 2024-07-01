@@ -16,9 +16,9 @@ import ServiceCard from '@/components/ServiceCard.astro'
 
 <Layout title="NutriaSoft">
   <Container unlimited class="bg-[url(/images/dots.svg)]">
-    <Container id="hero" as="section" class="grid-cols-2 items-center pt-12 md:grid md:pt-32 lg:grid-cols-[1.25fr_1fr]">
-      <Container unlimited as="article" class="flex flex-col gap-y-8 text-center md:text-left">
-        <h1 class="mx-auto max-w-lg text-pretty text-4xl font-semibold leading-tight md:mx-0">
+    <Container id="hero" as="section" class="grid-cols-2 items-center pt-12 lg:grid lg:grid-cols-[1.25fr_1fr] lg:pt-32">
+      <Container unlimited as="article" class="flex flex-col gap-y-8 text-center lg:text-left">
+        <h1 class="mx-auto max-w-lg text-pretty text-4xl font-semibold leading-tight lg:mx-0">
           We Make Your <span class="relative">
             Software
             <Icon name="short-underline" class="absolute -left-2 top-4 -z-10 w-44 text-primary" />
@@ -32,18 +32,33 @@ import ServiceCard from '@/components/ServiceCard.astro'
           We specialize in creating software solutions according to your needs, we manage from Infrastructure Solutions,
           to Web and Mobile Application Development from start to finish.
         </p>
-        <Container unlimited class="flex flex-col gap-3 sm:flex-row">
-          <Input id="client-email" placeholder="contactme@mail.com" required />
+        <Container unlimited id="contact-form" class="flex flex-col gap-3 sm:flex-row">
+          <div class="relative">
+            <Input id="email" placeholder="contactme@mail.com" class="pr-8" required />
+            <Icon
+              name="check"
+              id="check-icon"
+              class="absolute bottom-[10px] right-2 hidden size-6 text-green-500 opacity-80"
+            />
+          </div>
           <Button id="we-contact-you" variant="compact" label="We contact you" class="min-w-40" />
         </Container>
+        <Container
+          unlimited
+          id="positive-message"
+          class="hidden flex-col justify-center gap-2 sm:flex-row lg:h-11 lg:justify-start"
+        >
+          <span class="font-medium">Mail sent successfully, we will contact you soon</span>
+          <Icon name="check" id="check-icon" class="mx-auto size-6 text-green-500 opacity-80 sm:mx-0" />
+        </Container>
       </Container>
-      <Image fetchpriority="high" alt="Nutrialez" width={440} height={276} src="/images/otter.svg" />
+      <Image fetchpriority="high" alt="Nutrialez" width={440} height={276} src="/images/otter.svg" class="mx-auto" />
     </Container>
 
     <Container
       id="services"
       as="section"
-      class="flex gap-x-6 overflow-x-auto pt-20 md:pt-44 lg:justify-between lg:gap-x-0"
+      class="flex gap-x-6 overflow-x-auto pt-20 lg:justify-between lg:gap-x-0 lg:pt-44"
     >
       {
         services.cards.map(({ content, icon, link, title }) => (
@@ -52,10 +67,7 @@ import ServiceCard from '@/components/ServiceCard.astro'
       }
     </Container>
 
-    <Container
-      as="section"
-      class="grid w-full items-center pt-28 md:grid-cols-[302px_auto] lg:grid-cols-[444px_auto] lg:justify-between"
-    >
+    <Container as="section" class="grid w-full items-center pt-28 lg:grid-cols-[444px_auto] lg:justify-between">
       <Container unlimited as="article" class="flex w-full flex-col gap-y-14">
         <Container unlimited class="flex flex-col gap-y-4">
           <h2 class="text-[2.5rem] font-bold leading-tight">Your Needs, Your Terms</h2>
@@ -75,14 +87,14 @@ import ServiceCard from '@/components/ServiceCard.astro'
         width={505}
         height={365}
         src="/images/statistics-dashboard-1.png"
-        class="hidden md:block"
+        class="hidden lg:block"
       />
     </Container>
 
     <Container
       id="about-us"
       as="section"
-      class="grid w-full items-center justify-between gap-x-8 pt-20 md:grid-cols-[auto_302px] lg:grid-cols-[auto_444px]"
+      class="grid w-full items-center justify-between gap-x-8 pt-20 lg:grid-cols-[auto_444px]"
     >
       <Image
         lazy
@@ -90,7 +102,7 @@ import ServiceCard from '@/components/ServiceCard.astro'
         width={505}
         height={365}
         src="/images/statistics-dashboard-2.png"
-        class="hidden md:block"
+        class="hidden lg:block"
       />
       <Container unlimited as="article" class="flex w-full flex-col gap-y-14">
         <Container unlimited class="flex flex-col gap-y-4">
@@ -124,7 +136,7 @@ import ServiceCard from '@/components/ServiceCard.astro'
       </Container>
     </Container> -->
 
-    <Container as="section" class="mt-40 bg-[url(/images/clouds-blur.svg)] bg-top bg-no-repeat bg-origin-content">
+    <Container as="section" class="mt-20 bg-[url(/images/clouds-blur.svg)] bg-top bg-no-repeat bg-origin-content">
       <div class="py-24 sm:py-36">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
