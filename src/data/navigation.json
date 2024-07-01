@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "title": "Services",
+      "link": "#services"
+    },
+    {
+      "title": "About us",
+      "link": "#about-us"
+    },
+    {
+      "title": "Contact",
+      "link": "#hero"
+    }
+  ]
+}

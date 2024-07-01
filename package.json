@@ -9,32 +9,32 @@
     "preview": "astro preview",
     "prepare": "husky install .husky",
     "build": "astro check && astro build",
-    "lint": "eslint --fix src/**/*.{astro,ts}",
-    "format": "prettier --write src/**/*.astro"
+    "lint": "eslint --fix {src,scripts}/**/*.{astro,js,ts}",
+    "format": "prettier --write {src,scripts}/**/*.{astro,js,ts}"
   },
-  "packageManager": "pnpm@8.14.1",
   "engines": {
-    "node": ">=18.18.0",
-    "pnpm": ">=8.10.0"
+    "node": ">=20.12.0",
+    "pnpm": ">=8.15.0"
   },
   "dependencies": {
-    "astro": "4.2.1"
+    "astro": "4.9.3"
   },
   "devDependencies": {
-    "@astrojs/check": "0.4.1",
+    "@astrojs/check": "0.7.0",
     "@astrojs/tailwind": "5.1.0",
-    "@typescript-eslint/eslint-plugin": "6.19.0",
-    "@typescript-eslint/parser": "6.19.0",
-    "astro-icon": "1.0.2",
-    "eslint": "8.56.0",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "astro-icon": "1.1.0",
+    "eslint": "8.57.0",
     "eslint-config-standard-with-typescript": "43.0.1",
-    "eslint-plugin-astro": "0.31.3",
+    "eslint-plugin-astro": "0.34.0",
     "husky": "8.0.3",
-    "lint-staged": "15.2.0",
-    "prettier": "3.2.4",
-    "prettier-plugin-astro": "0.13.0",
-    "prettier-plugin-tailwindcss": "0.5.11",
-    "tailwindcss": "3.4.1",
+    "lint-staged": "15.2.5",
+    "prettier": "3.3.1",
+    "prettier-plugin-astro": "0.14.0",
+    "prettier-plugin-tailwindcss": "0.6.1",
+    "standard": "17.1.0",
+    "tailwindcss": "3.4.4",
     "typescript": "5.3.3"
   },
   "lint-staged": {

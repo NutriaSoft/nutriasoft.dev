@@ -1,39 +1,15 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 
-import Text from '@/components/Text.astro'
-import Link from '@/components/Link.astro'
-import Icon from '@/components/Icon.astro'
-
 interface Props extends HTMLAttributes<'button'> {
-  text: string
-  withIcon?: boolean
-  variant?: keyof typeof variants
+  id: string
+  label: string
+  variant?: 'primary' | 'compact' | 'large'
 }
 
-const { text, withIcon = false, variant = 'primary', class: extraClass } = Astro.props
-
-const variants = {
-  primary: {
-    btn: 'bg-primary border-primary',
-    text: 'text-white'
-  },
-  secondary: {
-    btn: 'bg-transparent border-black',
-    text: 'text-black'
-  }
-} as const
+const { label, class: extraClass, variant = 'primary', ...restProps } = Astro.props
 ---
 
-<Link
-  to="/"
-  class:list={[
-    'min-w-45 block w-full rounded-[14px] border p-[14px] text-center',
-    variants[variant].btn,
-    { 'flex items-center justify-center gap-x-2': withIcon },
-    extraClass
-  ]}
->
-  <Text as="span" class={variants[variant].text}>{text}</Text>
-  {withIcon ? <Icon name="chevron" class={variants[variant].text} /> : null}
-</Link>
+<button {...restProps} class:list={[`btn btn-${variant}`, extraClass]}>
+  {label}
+</button>

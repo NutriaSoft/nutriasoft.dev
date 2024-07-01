@@ -1,14 +1,177 @@
 ---
+import type { IconName } from 'virtual:icon'
+
+import stats from '@/data/stats.json'
+import Icon from '@/components/Icon.astro'
+import Link from '@/components/Link.astro'
 import Layout from '@/layouts/Layout.astro'
-import HeroSection from './_sections/Hero.astro'
-import FooterSection from './_sections/Footer.astro'
-import OurTeamSection from './_sections/OurTeam.astro'
-import ServicesSection from './_sections/Services.astro'
+import services from '@/data/services.json'
+import Image from '@/components/Image.astro'
+import Input from '@/components/Input.astro'
+import Button from '@/components/Button.astro'
+import Footer from '@/components/Footer.astro'
+import Container from '@/components/Container.astro'
+import ServiceCard from '@/components/ServiceCard.astro'
 ---
 
 <Layout title="NutriaSoft">
-  <HeroSection />
-  <ServicesSection />
-  <OurTeamSection />
-  <FooterSection />
+  <Container unlimited class="bg-[url(/images/dots.svg)]">
+    <Container id="hero" as="section" class="grid-cols-2 items-center pt-12 lg:grid lg:grid-cols-[1.25fr_1fr] lg:pt-32">
+      <Container unlimited as="article" class="flex flex-col gap-y-8 text-center lg:text-left">
+        <h1 class="mx-auto max-w-lg text-pretty text-4xl font-semibold leading-tight lg:mx-0">
+          We Make Your <span class="relative">
+            Software
+            <Icon name="short-underline" class="absolute -left-2 top-4 -z-10 w-44 text-primary" />
+          </span>With
+          <span class="relative">
+            The Best Technologies
+            <Icon name="long-underline" class="absolute -left-2 top-4 -z-10 hidden w-[424px] text-primary lg:block" />
+          </span>
+        </h1>
+        <p class="text-balance text-base text-slate-600">
+          We specialize in creating software solutions according to your needs, we manage from Infrastructure Solutions,
+          to Web and Mobile Application Development from start to finish.
+        </p>
+        <Container unlimited id="contact-form" class="flex flex-col gap-3 sm:flex-row">
+          <div class="relative">
+            <Input id="email" placeholder="contactme@mail.com" class="pr-8" required />
+            <Icon
+              name="check"
+              id="check-icon"
+              class="absolute bottom-[10px] right-2 hidden size-6 text-green-500 opacity-80"
+            />
+          </div>
+          <Button id="we-contact-you" variant="compact" label="We contact you" class="min-w-40" />
+        </Container>
+        <Container
+          unlimited
+          id="positive-message"
+          class="hidden flex-col justify-center gap-2 sm:flex-row lg:h-11 lg:justify-start"
+        >
+          <span class="font-medium">Mail sent successfully, we will contact you soon</span>
+          <Icon name="check" id="check-icon" class="mx-auto size-6 text-green-500 opacity-80 sm:mx-0" />
+        </Container>
+      </Container>
+      <Image fetchpriority="high" alt="Nutrialez" width={440} height={276} src="/images/otter.svg" class="mx-auto" />
+    </Container>
+
+    <Container
+      id="services"
+      as="section"
+      class="flex gap-x-6 overflow-x-auto pt-20 lg:justify-between lg:gap-x-0 lg:pt-44"
+    >
+      {
+        services.cards.map(({ content, icon, link, title }) => (
+          <ServiceCard type="card" {content} icon={icon as IconName} {link} {title} />
+        ))
+      }
+    </Container>
+
+    <Container as="section" class="grid w-full items-center pt-28 lg:grid-cols-[444px_auto] lg:justify-between">
+      <Container unlimited as="article" class="flex w-full flex-col gap-y-14">
+        <Container unlimited class="flex flex-col gap-y-4">
+          <h2 class="text-[2.5rem] font-bold leading-tight">Your Needs, Your Terms</h2>
+          <p class="text-pretty text-base text-slate-600">
+            Embrace flexibility with our on-demand services. We adapt to your requirements, delivering solutions when
+            you need them, ensuring your journey is as dynamic as your goals.
+          </p>
+        </Container>
+        <Link to="#" class="btn btn-large flex w-max items-center gap-x-2 text-lg font-semibold">
+          Get to know us more
+          <Icon name="chevron" size={24} />
+        </Link>
+      </Container>
+      <Image
+        lazy
+        alt="Statistics Dashboard"
+        width={505}
+        height={365}
+        src="/images/statistics-dashboard-1.png"
+        class="hidden lg:block"
+      />
+    </Container>
+
+    <Container
+      id="about-us"
+      as="section"
+      class="grid w-full items-center justify-between gap-x-8 pt-20 lg:grid-cols-[auto_444px]"
+    >
+      <Image
+        lazy
+        alt="Statistics Dashboard"
+        width={505}
+        height={365}
+        src="/images/statistics-dashboard-2.png"
+        class="hidden lg:block"
+      />
+      <Container unlimited as="article" class="flex w-full flex-col gap-y-14">
+        <Container unlimited class="flex flex-col gap-y-4">
+          <h2 class="text-[2.5rem] font-bold leading-tight">About us</h2>
+          <p class="text-pretty text-base text-slate-600">
+            We are a team of professionals passionate about technology and software development, where we unify
+            experiences, knowledge, creativity and methodologies to support our clients in meeting their strategic
+            objectives through innovation and digital transformation, leveraged in new technologies. information
+            technology.
+          </p>
+        </Container>
+        <Link to="#" class="btn btn-large flex w-max items-center gap-x-2 text-lg font-semibold">
+          Get to know us more
+          <Icon name="chevron" size={24} />
+        </Link>
+      </Container>
+    </Container>
+
+    <!-- <Container unlimited as="section" class="relative pt-40">
+      <Container>
+        <h3 class="text-center text-4xl font-semibold leading-tight">Checkout our products</h3>
+        <Container unlimited as="section" class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-8 pt-8">
+          {products.data.map((data) => <ProductCard {...data} />)}
+        </Container>
+      </Container>
+      <Container
+        unlimited
+        class="absolute left-0 right-0 top-1/2 z-30 hidden h-1/2 w-full place-items-center bg-gradient-to-t from-white via-white to-transparent xl:grid"
+      >
+        <Link to="#" class="btn btn-compact">Go to marketplace</Link>
+      </Container>
+    </Container> -->
+
+    <Container as="section" class="mt-20 bg-[url(/images/clouds-blur.svg)] bg-top bg-no-repeat bg-origin-content">
+      <div class="py-24 sm:py-36">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+            {
+              stats.data.map(({ description, stat }) => (
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dd class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{stat}</dd>
+                  <dt class="text-base leading-7 text-gray-600">{description}</dt>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
+    </Container>
+
+    <Container as="section" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Stay on top of customer support</h2>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Our lines of business provide our clients with appropriate support in the search for comprehensive solutions
+          at the business level, along with the experience of our consultants and the commitment to quality provided.
+        </p>
+      </div>
+      <div class="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none">
+        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+          {
+            services.articles.map(({ content, icon, link, title }) => (
+              <ServiceCard type="article" {content} icon={icon as IconName} {link} {title} />
+            ))
+          }
+        </dl>
+      </div>
+    </Container>
+
+    <Footer />
+  </Container>
 </Layout>

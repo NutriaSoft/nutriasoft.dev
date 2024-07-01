@@ -3,9 +3,13 @@ dist/
 
 # generated types
 .astro/
+typings/
 
 # dependencies
 node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
 
 # logs
 npm-debug.log*

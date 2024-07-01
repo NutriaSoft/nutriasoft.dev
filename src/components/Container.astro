@@ -1,14 +1,11 @@
 ---
-import type { HTMLAttributes, HTMLTag } from 'astro/types'
+import type { HTMLTag, Polymorphic } from 'astro/types'
 
-interface Props extends Omit<HTMLAttributes<'section'>, 'slot'> {
-  as?: Extract<HTMLTag, 'section' | 'article' | 'footer' | 'nav' | 'div'>
-  center?: boolean
-}
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag; unlimited?: boolean }>
 
-const { as: Tag = 'section', center = false, class: extraClass } = Astro.props
+const { as: Tag = 'div', unlimited = false, class: extraClass, ...props } = Astro.props
 ---
 
-<Tag class:list={[{ 'mx-auto w-full max-w-screen-xl px-8': center }, extraClass]}>
+<Tag {...props} class:list={[{ 'mx-auto max-w-6xl px-6': !unlimited }, extraClass]}>
   <slot />
 </Tag>
