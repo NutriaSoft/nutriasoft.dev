@@ -1,5 +1,6 @@
+import { isValidEmail } from '$/validations'
 import { $contactButton, $input } from '$/declareRefs'
-import { handleSubmit, isValidEmail, showInputCheck } from './contactEmailAction'
+import { handleSubmit, showInputCheck } from '$/contactEmailAction'
 
 $input?.addEventListener('input', () => {
   showInputCheck(isValidEmail($input?.value))
