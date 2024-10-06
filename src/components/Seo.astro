@@ -1,0 +1,41 @@
+---
+import { SEO } from 'astro-seo'
+
+interface Props {
+  title: string
+  description?: string
+}
+
+const { title, description = 'NutriaSoft Landing Page' } = Astro.props
+---
+
+<SEO
+  title={title}
+  description={description}
+  openGraph={{
+    basic: {
+      title: 'Tinker Tailor Soldier Spy',
+      type: 'A type.',
+      image: 'https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png'
+    }
+  }}
+  extend={{
+    // extending the default link tags
+    link: [
+      { rel: 'apple-touch-icon', href: 'favicon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'favicon.png' }
+    ],
+
+    // extending the default meta tags
+    meta: [
+      { name: 'theme-color', content: '#1F1F1F' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+      {
+        name: 'twitter:image',
+        content: 'https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png'
+      },
+      { name: 'twitter:title', content: 'Tinker Tailor Soldier Spy' },
+      { name: 'twitter:description', content: 'Agent' }
+    ]
+  }}
+/>
