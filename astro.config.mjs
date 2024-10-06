@@ -12,5 +12,9 @@ export default defineConfig({
   adapter: vercelServerless(),
   build: {
     assets: 'assets'
+  },
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['en', 'es', 'fr', 'pt-BR']
   }
 })
