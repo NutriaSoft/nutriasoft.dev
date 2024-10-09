@@ -6,7 +6,10 @@ interface Props {
   description?: string
 }
 
-const { title, description = 'NutriaSoft Landing Page' } = Astro.props
+const {
+  title,
+  description = 'We specialize in creating software solutions according to your needs, we manage from Infrastructure Solutions, to Web and Mobile Application Development from start to finish'
+} = Astro.props
 ---
 
 <SEO
@@ -14,9 +17,9 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
   description={description}
   openGraph={{
     basic: {
-      title: 'Tinker Tailor Soldier Spy',
-      type: 'A type.',
-      image: 'https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png'
+      title: 'NutriaSoft.dev 🦦',
+      type: 'website',
+      image: 'https://res.cloudinary.com/drxx5lhyz/image/upload/v1728499804/nutria_ejzvfy.png'
     }
   }}
   extend={{
@@ -29,13 +32,7 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
     // extending the default meta tags
     meta: [
       { name: 'theme-color', content: '#1F1F1F' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      {
-        name: 'twitter:image',
-        content: 'https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png'
-      },
-      { name: 'twitter:title', content: 'Tinker Tailor Soldier Spy' },
-      { name: 'twitter:description', content: 'Agent' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
     ]
   }}
 />
