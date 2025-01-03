@@ -9,14 +9,14 @@ export const typings = () => ({
   hooks: {
     'astro:config:setup': ({ logger }) => {
       generateIconTypes(logger)
-    }
-  }
+    },
+  },
 })
 
 /**
  * @param {import('astro').AstroIntegrationLogger} logger
  */
-function generateIconTypes (logger) {
+function generateIconTypes(logger) {
   const iconsDir = join(process.cwd(), 'src/icons')
   const files = readdirSync(iconsDir)
   const svgFiles = files.filter((file) => file.endsWith('.svg'))

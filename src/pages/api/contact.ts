@@ -10,8 +10,8 @@ interface ContactApiResponse {
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    const body = await request.json()
-    const email = body.email as string
+    const body = (await request.json()) as { email: string }
+    const email = body.email
 
     if (!isValidEmail(email)) {
       throw new Error()
@@ -21,8 +21,8 @@ export const POST: APIRoute = async ({ request }) => {
       body: JSON.stringify({ email }),
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     }
 
     const response = await fetch(`${API_URL}/contact`, requestOptions)
