@@ -1,7 +1,10 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types'
+import type { HTMLAttributes, HTMLTag } from 'astro/types'
 
-type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag; unlimited?: boolean }>
+interface Props extends HTMLAttributes<'div'> {
+  as?: HTMLTag
+  unlimited?: boolean
+}
 
 const { as: Tag = 'div', unlimited = false, class: extraClass, ...props } = Astro.props
 ---
