@@ -14,7 +14,7 @@ interface Props {
 const { alt, link, title, content, imageUrl: src } = Astro.props
 ---
 
-<Container unlimited class="rounded-xl border border-slate-300 bg-transparent bg-white hover:bg-primary">
+<Container unlimited class="hover:bg-primary rounded-xl border border-slate-300 bg-white">
   <Link external to={link} class="grid gap-y-3 px-4 py-6">
     {
       src ? (

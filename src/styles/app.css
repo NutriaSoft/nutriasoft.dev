@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+
+  --color-primary: #D5FA51;
+  --color-white: #FFF;
+  --color-black: #1F1F1F;
+  --color-transparent: transparent;
+}
+
+@layer components {
+  .btn {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-white);
+    font-family: var(--font-inter);
+    line-height: var(--leading-tight);
+    background-color: var(--color-black);
+  }
+
+  .btn-primary {
+    padding-top: calc(var(--spacing) * 4);
+    padding-left: calc(var(--spacing) * 5);
+    padding-right: calc(var(--spacing) * 5);
+    padding-bottom: calc(var(--spacing) * 4);
+    border-radius: var(--radius-2xl);
+  }
+
+  .btn-compact {
+    padding-top: calc(var(--spacing) * 3);
+    padding-left: calc(var(--spacing) * 3);
+    padding-right: calc(var(--spacing) * 3);
+    padding-bottom: calc(var(--spacing) * 3);
+    border-radius: var(--radius-lg);
+  }
+
+  .btn-large {
+    padding-top: calc(var(--spacing) * 2);
+    padding-left: calc(var(--spacing) * 5);
+    padding-right: calc(var(--spacing) * 5);
+    padding-bottom: calc(var(--spacing) * 2);
+    border-radius: var(--radius-lg);
+  }
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/inter-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/inter-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/inter-600.woff2') format('woff2');
+}

@@ -18,7 +18,7 @@ const { title, content, icon, link, type = 'card' } = Astro.props
 
 {
   type === 'card' && (
-    <Container unlimited class="w-max min-w-56 rounded-2xl border border-gray-300 bg-white hover:bg-primary">
+    <Container unlimited class="hover:bg-primary w-max min-w-56 rounded-2xl border border-gray-300 bg-white">
       <Link to={link} class="grid gap-y-7 px-6 py-4 text-black">
         {icon ? <Icon name={icon} size={60} /> : null}
 
@@ -33,9 +33,9 @@ const { title, content, icon, link, type = 'card' } = Astro.props
 {
   type === 'article' && (
     <Container unlimited as="article" class="group flex flex-col">
-      <dt class="mb-6 flex items-center justify-start gap-3 text-base font-semibold capitalize leading-7 text-gray-900">
+      <dt class="mb-6 flex items-center justify-start gap-3 text-base leading-7 font-semibold text-gray-900 capitalize">
         {icon ? (
-          <div class="flex size-10 items-center justify-center rounded-lg bg-primary">
+          <div class="bg-primary flex size-10 items-center justify-center rounded-lg">
             <Icon name={icon} class="size-6 text-black" />
           </div>
         ) : null}
@@ -44,11 +44,11 @@ const { title, content, icon, link, type = 'card' } = Astro.props
       <dd class="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
         <p class="flex-auto">{content}</p>
 
-        <Link to={link} class="relative mt-6 cursor-pointer text-sm font-semibold leading-6 text-black">
+        <Link to={link} class="relative mt-6 cursor-pointer text-sm leading-6 font-semibold text-black">
           Learn more
           <Icon
             name="long-underline"
-            class="absolute -left-2 top-[6px] -z-10 w-[90px] text-transparent transition-colors group-hover:text-primary"
+            class="group-hover:text-primary absolute top-[6px] -left-2 -z-10 w-[90px] text-transparent transition-colors"
           />
         </Link>
       </dd>

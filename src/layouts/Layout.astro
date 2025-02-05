@@ -1,6 +1,7 @@
 ---
 import Navbar from '@/components/Navbar.astro'
 import Seo from '@/components/Seo.astro'
+import '@/styles/app.css'
 
 interface Props {
   title: string
@@ -13,38 +14,15 @@ const { title, description = 'NutriaSoft Landing Page' } = Astro.props
 <!doctype html>
 <html lang="en" class="scroll-pt-20 scroll-smooth">
   <head>
-    <Seo title={title} description={description} />
     <meta charset="UTF-8" />
-    <style>
-      @font-face {
-        font-family: 'Inter';
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-        src: url('/fonts/inter-400.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-        src: url('/fonts/inter-500.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-weight: 600;
-        font-style: normal;
-        font-display: swap;
-        src: url('/fonts/inter-600.woff2') format('woff2');
-      }
-    </style>
+    <Seo title={title} description={description} />
 
     <script src="$/declareRefs.ts"></script>
     <script src="$/contactEmailAction.ts"></script>
     <script src="$/events.ts"></script>
   </head>
 
-  <body class="min-h-screen font-inter text-black">
+  <body class="font-inter min-h-screen text-black">
     <Navbar />
     <slot />
   </body>
