@@ -65,3 +65,7 @@
   font-display: swap;
   src: url('/fonts/inter-600.woff2') format('woff2');
 }
+
+wc-toast-content {
+  --wc-toast-font-family: 'Inter', sans-serif;
+}

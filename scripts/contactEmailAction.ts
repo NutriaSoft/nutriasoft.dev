@@ -1,7 +1,14 @@
+import { toast } from 'wc-toast'
+import { isValidEmail } from '$/validations'
 import { $checkIcon, $contactForm, $input, $positiveMessage } from '$/declareRefs'
 
 export function handleSubmit(possibleEmail: string): void {
   void (async () => {
+    if (!isValidEmail(possibleEmail)) {
+      toast('Invalid email', { icon: { type: 'error' }, theme: { type: 'light' } })
+      return
+    }
+
     await saveEmail(possibleEmail)
   })()
 }
@@ -28,8 +35,10 @@ async function saveEmail(email: string): Promise<void> {
     if (ok) {
       $contactForm?.classList.add('hidden')
       $positiveMessage?.classList.replace('hidden', 'flex')
+      toast('Email sent', { icon: { type: 'success' }, theme: { type: 'light' } })
     }
   } catch (error) {
+    toast('Error sending email', { icon: { type: 'error' }, theme: { type: 'light' } })
     console.error(error)
   }
 }
